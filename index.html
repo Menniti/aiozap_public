@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>Gincana Oakian</title>
+		<link rel="stylesheet" href="assets/css/framework7.ios.min.css">
+		<link rel="stylesheet" href="assets/css/framework7.ios.colors.min.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<div class="panel panel-right panel-reveal">
+			<div class="content-block-title">Menu principal</div>
+			<div class="list-block" id="pagesScreen">
+				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
+			</div>
+			<div class="content-block-title">Equipes</div>
+			<div class="list-block" id="teamsScreen">
+				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
+			</div>
+		</div>
+
+		<div class="views">
+			<div class="view view-main">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">Gincana Oakian</div>
+						<div class="right">
+							<a href="#" class="open-panel link icon-only"><i class="fa fa-bars"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="index" class="page">
+						<div class="page-content" id="feedsScreen">
+							<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/framework7.min.js"></script>
+		<script type="text/javascript" src="assets/js/firebase.js"></script>
+		<script type="text/javascript" src="assets/js/moment-locales.js"></script>
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="model/App.js"></script>
+		<script type="text/javascript" src="model/Feed.js"></script>
+		<script type="text/javascript" src="model/Page.js"></script>
+		<script type="text/javascript" src="model/Team.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="controller/Home.js"></script>
+		<script type="text/javascript" src="controller/Feeds.js"></script>
+		<script type="text/javascript" src="controller/Pages.js"></script>
+		<script type="text/javascript" src="controller/Teams.js"></script>
+	</body>
+</html>

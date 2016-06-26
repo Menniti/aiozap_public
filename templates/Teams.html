@@ -1,0 +1,14 @@
+				<ul>
+					{{#if this}}
+						{{#each this}}
+							<li>
+								<a href="views/TeamsDetail.html?id={{@key}}" class="close-panel item-link item-content">
+									<div class="item-media"></div>
+									<div class="item-inner">
+										<div class="item-title">{{title}}</div>
+									</div>
+								</a>
+							</li>
+						{{/each}}
+					{{/if}}
+				</ul>

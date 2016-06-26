@@ -1,0 +1,17 @@
+					{{#if this}}
+						{{#each this}}
+							<div class="card demo-card-header-pic">
+								{{#if file}}
+									<div style="background-image:url({{file}})" valign="bottom" class="card-header color-white no-border"></div>
+								{{/if}}
+								<div class="card-content">
+									<div class="card-content-inner">
+										<h3 class="card-title">{{title}}</h3>
+										<p class="color-gray">{{date}}</p>
+										<p>{{description}}</p>
+									</div>
+								</div>
+							</div>
+						{{/each}}
+					{{/if}}
+
