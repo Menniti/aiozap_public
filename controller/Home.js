@@ -6,8 +6,8 @@ App.prototype.HomeScreen = function() {
 
 	myApp.onPageAfterAnimation('index', function (page) {
 		self.FeedsScreen();
-		self.PagesScreen();
 		self.TeamsScreen();
+		self.PagesScreen();
 	});
 
 	myApp.onPageAfterAnimation('PagesDetail', function (page) {

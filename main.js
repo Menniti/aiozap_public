@@ -14,5 +14,6 @@ window.onload = function() {
 	window.Feed = new Feed();
 	window.Page = new Page();
 	window.Team = new Team();
+	window.Team = new User();
 }
 
