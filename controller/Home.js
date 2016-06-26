@@ -17,4 +17,8 @@ App.prototype.HomeScreen = function() {
 	myApp.onPageAfterAnimation('TeamsDetail', function (page) {
 		self.TeamsDetailAction();
 	});
+
+	myApp.onPageAfterAnimation('Contact', function (page) {
+		self.ContactScreen();
+	});
 };

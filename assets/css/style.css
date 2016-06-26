@@ -12,6 +12,12 @@
 	border-left:1px solid #d0d0d0;
 }
 
+.contact-image{
+	height:32px;
+	width:32px;
+	border-radius:16px;
+}
+
 .content-image{
 	width:100%;
 	height:180px;
