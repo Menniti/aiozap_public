@@ -1,3 +1,11 @@
+.content-block-title{
+	padding:5px 0px;
+}
+
+#SidebarLoggedIn,#SidebarLoggedOut{
+	display:none;
+}
+
 .list-block{
 	margin:0px;
 }

@@ -1,17 +1,15 @@
-//User
-function User() {
+//Admin
+function Admin() {
 	this.id;
 	this.email;
 	this.file;
-	this.team;
-	this.is_editor;
 	this.name;
 	this.phone;
 	this.password;
 }
 
 //LOGIN
-User.prototype.login = function() {
+Admin.prototype.login = function() {
 	var deferred = $.Deferred();
 	var email = this.email;
 	var password = this.password;
@@ -29,7 +27,7 @@ User.prototype.login = function() {
 
 
 //LOGOUT
-User.prototype.logout = function() {
+Admin.prototype.logout = function() {
 	var deferred = $.Deferred();
 	firebase.auth().signOut().then(function() {
 		deferred.resolve(true);
@@ -40,19 +38,17 @@ User.prototype.logout = function() {
 };
 
 //CADASTRO
-User.prototype.create = function() {
+Admin.prototype.create = function() {
 	var deferred = $.Deferred();
 	var email = this.email;
 	var password = this.password;
 	firebase.auth().createUserWithEmailAndPassword(email,password).then(function() {
 		var inputData = {
 			email: email,
-			created: new Date().getTime(),
-			is_editor: 0,
-			team: 0
+			created: new Date().getTime()
 		};
-		var newKey = firebase.database().ref().child('users').push().key;
-		firebase.database().ref('users/'+newKey).set(inputData);
+		var newKey = firebase.database().ref().child('admins').push().key;
+		firebase.database().ref('admins/'+newKey).set(inputData);
 		deferred.resolve(true);
 	}, function(error) {
 		deferred.reject(error);
@@ -61,14 +57,14 @@ User.prototype.create = function() {
 };
 
 //LEITURA
-User.prototype.read = function(id) {
+Admin.prototype.read = function(id) {
 	var deferred = $.Deferred();
 	if(id!=undefined){
-		firebase.database().ref('users/'+id).once('value', function(data) {
+		firebase.database().ref('admins/'+id).once('value', function(data) {
 			deferred.resolve(data.val());
 		});
 	}else{
-		firebase.database().ref('users/').once('value', function(data) {
+		firebase.database().ref('admins/').once('value', function(data) {
 			deferred.resolve(data.val());
 		});
 	}
@@ -76,19 +72,15 @@ User.prototype.read = function(id) {
 };
 
 //UPDATE
-User.prototype.update = function() {
+Admin.prototype.update = function() {
 	var id = this.id;
 	var name = this.name;
-	var is_editor = this.is_editor;
 	var phone = this.phone;
-	var team = this.team;
 	var inputData = {
 		phone: phone,
-		name: name,
-		is_editor: is_editor,
-		team: team,
+		name: name
 	};
-	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('admins/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -96,20 +88,20 @@ User.prototype.update = function() {
 };
 
 //UPLOAD FILE
-User.prototype.uploadFile = function() {
+Admin.prototype.uploadFile = function() {
 	var id = this.id;
 	var file = this.file;
-	return uploadTask = firebase.storage().ref('users/'+id+'/'+Date.now()+"_"+file.name).put(file, {'contentType': file.type});
+	return uploadTask = firebase.storage().ref('admins/'+id+'/'+Date.now()+"_"+file.name).put(file, {'contentType': file.type});
 };
 
 //UPDATE FILE
-User.prototype.updateFile = function() {
+Admin.prototype.updateFile = function() {
 	var id = this.id;
 	var file = this.file;
 	var inputData = {
 		file: file,
 	};
-	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('admins/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -117,13 +109,13 @@ User.prototype.updateFile = function() {
 };
 
 //DELETE FILE
-User.prototype.deleteFile = function() {
+Admin.prototype.deleteFile = function() {
 	var id = this.id;
 	var file = "";
 	var inputData = {
 		file: file,
 	};
-	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('admins/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -131,7 +123,7 @@ User.prototype.deleteFile = function() {
 };
 
 //DELETE
-User.prototype.delete = function(id) {
-	return firebase.database().ref('users/'+id).remove();
+Admin.prototype.delete = function(id) {
+	return firebase.database().ref('admins/'+id).remove();
 };
 

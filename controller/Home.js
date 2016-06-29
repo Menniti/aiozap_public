@@ -21,4 +21,17 @@ App.prototype.HomeScreen = function() {
 	myApp.onPageAfterAnimation('Contact', function (page) {
 		self.ContactScreen();
 	});
+
+	myApp.onPageAfterAnimation('Login', function (page) {
+		self.LoginScreen();
+	});
+
+	if(self.checkLogin()){
+		$("#SidebarLoggedIn").show();
+		$("#SidebarLoggedOut").hide();
+	}else{
+		$("#SidebarLoggedIn").hide();
+		$("#SidebarLoggedOut").show();
+	}
+
 };

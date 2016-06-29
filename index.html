@@ -15,6 +15,46 @@
 		<div class="statusbar-overlay"></div>
 		<div class="panel-overlay"></div>
 		<div class="panel panel-right panel-reveal">
+
+			<div class="content-block-title">Acessar meu perfil</div>
+			<div class="list-block" id="SidebarLoggedIn">
+				<ul>
+					<li>
+						<a href="views/Login.html" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Entrar</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="views/Register.html" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Cadastre-se</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="list-block" id="SidebarLoggedOut">
+				<ul>
+					<li>
+						<a href="views/Login.html" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Entrar</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="views/Register.html" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Cadastre-se</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
 			<div class="content-block-title">Menu principal</div>
 			<div class="list-block" id="pagesScreen">
 				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
@@ -35,6 +75,9 @@
 					</li>
 				</ul>
 			</div>
+			<div class="content-block">
+			</div>
+
 		</div>
 
 		<div class="views">
@@ -67,11 +110,14 @@
 		<script type="text/javascript" src="model/Page.js"></script>
 		<script type="text/javascript" src="model/Team.js"></script>
 		<script type="text/javascript" src="model/User.js"></script>
+		<script type="text/javascript" src="model/Admin.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="controller/Home.js"></script>
 		<script type="text/javascript" src="controller/Feeds.js"></script>
 		<script type="text/javascript" src="controller/Pages.js"></script>
 		<script type="text/javascript" src="controller/Teams.js"></script>
 		<script type="text/javascript" src="controller/Contact.js"></script>
+		<script type="text/javascript" src="controller/Login.js"></script>
+		<script type="text/javascript" src="controller/Register.js"></script>
 	</body>
 </html>

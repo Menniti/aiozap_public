@@ -1,5 +1,5 @@
-//Feed
-function Feed() {
+//Help
+function Help() {
 	this.id;
 	this.file;
 	this.title;
@@ -7,7 +7,7 @@ function Feed() {
 }
 
 //CADASTRO
-Feed.prototype.create = function() {
+Help.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
 	var description = this.description;
@@ -16,7 +16,7 @@ Feed.prototype.create = function() {
 		created: new Date().getTime(),
 		description: description
 	};
-	return firebase.database().ref('feeds/').push(inputData).then(function(result) {
+	return firebase.database().ref('helps/').push(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -24,14 +24,14 @@ Feed.prototype.create = function() {
 };
 
 //LEITURA
-Feed.prototype.read = function(id) {
+Help.prototype.read = function(id) {
 	var deferred = $.Deferred();
 	if(id!=undefined){
-		firebase.database().ref('feeds/'+id).once('value', function(data) {
+		firebase.database().ref('helps/'+id).once('value', function(data) {
 			deferred.resolve(data.val());
 		});
 	}else{
-		firebase.database().ref('feeds/').once('value', function(data) {
+		firebase.database().ref('helps/').once('value', function(data) {
 			deferred.resolve(data.val());
 		});
 	}
@@ -39,7 +39,7 @@ Feed.prototype.read = function(id) {
 };
 
 //UPDATE
-Feed.prototype.update = function() {
+Help.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
 	var description = this.description;
@@ -47,7 +47,7 @@ Feed.prototype.update = function() {
 		title: title,
 		description: description
 	};
-	return firebase.database().ref('feeds/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('helps/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -56,20 +56,20 @@ Feed.prototype.update = function() {
 
 
 //UPLOAD FILE
-Feed.prototype.uploadFile = function() {
+Help.prototype.uploadFile = function() {
 	var id = this.id;
 	var file = this.file;
-	return uploadTask = firebase.storage().ref('feeds/'+id+'/'+Date.now()+"_"+file.name).put(file, {'contentType': file.type});
+	return uploadTask = firebase.storage().ref('helps/'+id+'/'+Date.now()+"_"+file.name).put(file, {'contentType': file.type});
 };
 
 //UPDATE FILE
-Feed.prototype.updateFile = function() {
+Help.prototype.updateFile = function() {
 	var id = this.id;
 	var file = this.file;
 	var inputData = {
 		file: file,
 	};
-	return firebase.database().ref('feeds/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('helps/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -77,13 +77,13 @@ Feed.prototype.updateFile = function() {
 };
 
 //DELETE FILE
-Feed.prototype.deleteFile = function() {
+Help.prototype.deleteFile = function() {
 	var id = this.id;
 	var file = "";
 	var inputData = {
 		file: file,
 	};
-	return firebase.database().ref('feeds/'+id).update(inputData).then(function(result) {
+	return firebase.database().ref('helps/'+id).update(inputData).then(function(result) {
 		return true;
 	},function(error) {
 		return false;
@@ -92,7 +92,7 @@ Feed.prototype.deleteFile = function() {
 
 
 //DELETE
-Feed.prototype.delete = function(id) {
-	return firebase.database().ref('feeds/'+id).remove();
+Help.prototype.delete = function(id) {
+	return firebase.database().ref('helps/'+id).remove();
 };
 

@@ -15,5 +15,6 @@ window.onload = function() {
 	window.Page = new Page();
 	window.Team = new Team();
 	window.User = new User();
+	window.Admin = new Admin();
 }
 

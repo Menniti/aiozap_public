@@ -19,7 +19,6 @@ App.prototype.onAuthStateChanged = function(user) {
 		this.HomeScreen();
 	}else{
 		this.HomeScreen();
-		//this.SignInScreen();
 	}
 };
 
@@ -27,7 +26,6 @@ App.prototype.checkLogin = function() {
 	if(this.auth.currentUser){
 		return true;
 	}else{
-		this.SignInScreen();
 		return false;
 	}
 };
