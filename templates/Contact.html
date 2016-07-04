@@ -2,10 +2,22 @@
 				{{#if this}}
 					{{#each this}}
 						<li class="item-content">
-							<div class="item-media"><img class="contact-image" src="{{file}}" /></div>
+							{{#if file}}
+								<div class="item-media"><img class="contact-image" src="{{file}}" /></div>
+							{{else}}
+								<div class="item-media"><img class="contact-image" src="assets/img/profile_placeholder.png" /></div>
+							{{/if}}
 							<div class="item-inner">
-								<div class="item-title">{{name}}</div>
-								<div class="item-after">{{phone}}</div>
+								<div class="item-title">
+									{{#if name}}
+										<span class="contact-name">{{name}}</span></br>
+									{{/if}}
+									<span class="contact-email">{{email}}</span></br>
+									{{#if phone}}
+										<span class="contact-phone">{{phone}}</span>
+									{{/if}}
+								</div>
+								<!--<div class="item-after">{{phone}}</div>-->
 							</div>
 						</li>
 					{{/each}}

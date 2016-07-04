@@ -1,7 +1,9 @@
 App.prototype.LoginScreen = function() {
 	var self = this;
 	var LoginForm = $("#login-form");
+	var RegisterForm = $("#register-form");
 	LoginForm.on('submit', self.LoginAction.bind(self));
+	RegisterForm.on('submit', self.RegisterAction.bind(self));
 };
 
 App.prototype.LoginAction = function(e) {
@@ -14,7 +16,22 @@ App.prototype.LoginAction = function(e) {
 		if(result==true){
 			mainView.back();
 		}else{
-			myApp.alert(error.message);
+			myApp.alert(result);
+		}
+	})
+};
+
+App.prototype.RegisterAction = function(e) {
+	e.preventDefault();
+	window.User.email = $("#input_register_email").val();
+	window.User.password = $("#input_register_password").val();
+	var Users = window.User.create();
+	Users.then(function(result) {
+		console.log(result);
+		if(result==true){
+			mainView.back();
+		}else{
+			myApp.alert(result);
 		}
 	})
 };

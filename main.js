@@ -16,5 +16,8 @@ window.onload = function() {
 	window.Team = new Team();
 	window.User = new User();
 	window.Admin = new Admin();
+	window.Help = new Help();
+	window.Job = new Job();
+	window.JobPic = new JobPic();
 }
 

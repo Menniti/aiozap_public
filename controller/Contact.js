@@ -5,9 +5,15 @@ App.prototype.ContactScreen = function() {
 
 	var Users = window.User.read();
 	Users.then(function(result) {
+		var coords=[];
+		for (var i in result){
+			if(result[i].is_editor==1){
+				coords.push(result[i]);
+			}
+		}
 		$.get("templates/Contact.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
-			var html = compiledTemplate(result);
+			var html = compiledTemplate(coords);
 			div.html(html);
 		});
 	});		

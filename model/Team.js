@@ -1,4 +1,4 @@
-//TEAM
+//Team
 function Team() {
 	this.id;
 	this.file;

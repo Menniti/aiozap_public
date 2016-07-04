@@ -1,0 +1,41 @@
+				{{#if this}}
+					<li class="item-content">
+						{{#if file}}
+							<div class="item-media"><img class="contact-image" src="{{file}}" /></div>
+						{{else}}
+							<div class="item-media"><img class="contact-image" src="assets/img/profile_placeholder.png" /></div>
+						{{/if}}
+						<div class="item-inner">
+							<div class="item-title">
+								<span class="contact-phone">Bem vindo,</span></br>
+								{{#if name}}
+									<span class="contact-name">{{name}}</span></br>
+								{{/if}}
+								<span class="contact-email">{{email}}</span></br>
+							</div>
+							<!--<div class="item-after">{{phone}}</div>-->
+						</div>
+					</li>
+				{{/if}}
+					<li>
+						<a disabled href="#" id="SidebarBtnSendReport" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Enviar um relatório</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" id="SidebarBtnTakeJobPic" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Tirar uma foto</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" id="SidebarBtnLogout" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Sair</div>
+							</div>
+						</a>
+					</li>
+

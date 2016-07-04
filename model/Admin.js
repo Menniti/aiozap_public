@@ -47,7 +47,8 @@ Admin.prototype.create = function() {
 			email: email,
 			created: new Date().getTime()
 		};
-		var newKey = firebase.database().ref().child('admins').push().key;
+		//var newKey = firebase.database().ref().child('users').push().key;
+		var newKey = firebase.auth().currentUser.uid;
 		firebase.database().ref('admins/'+newKey).set(inputData);
 		deferred.resolve(true);
 	}, function(error) {

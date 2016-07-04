@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<title>Gincana Oakian</title>
+		<title>Gincana Social Força em Ação</title>
 		<link rel="stylesheet" href="assets/css/framework7.ios.min.css">
 		<link rel="stylesheet" href="assets/css/framework7.ios.colors.min.css">
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -16,23 +16,9 @@
 		<div class="panel-overlay"></div>
 		<div class="panel panel-right panel-reveal">
 
-			<div class="content-block-title">Acessar meu perfil</div>
+			<div class="content-block-title">Meu perfil</div>
 			<div class="list-block" id="SidebarLoggedIn">
-				<ul>
-					<li>
-						<a href="views/Login.html" class="close-panel item-link item-content">
-							<div class="item-inner">
-								<div class="item-title">Entrar</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="views/Register.html" class="close-panel item-link item-content">
-							<div class="item-inner">
-								<div class="item-title">Cadastre-se</div>
-							</div>
-						</a>
-					</li>
+				<ul id="HomeProfile">
 				</ul>
 			</div>
 
@@ -45,24 +31,32 @@
 							</div>
 						</a>
 					</li>
+				</ul>
+			</div>
+
+			<div class="content-block-title">Help Desk</div>
+			<div class="list-block">
+				<ul>
 					<li>
-						<a href="views/Register.html" class="close-panel item-link item-content">
+						<a href="views/HelpDesk.html" class="close-panel item-link item-content">
 							<div class="item-inner">
-								<div class="item-title">Cadastre-se</div>
+								<div class="item-title">Tenho uma dúvida</div>
 							</div>
 						</a>
 					</li>
 				</ul>
 			</div>
 
-			<div class="content-block-title">Menu principal</div>
-			<div class="list-block" id="pagesScreen">
+			<div class="content-block-title">Atividades</div>
+			<div class="list-block" id="jobsScreen">
 				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
 			</div>
+
 			<div class="content-block-title">Equipes</div>
 			<div class="list-block" id="teamsScreen">
 				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
 			</div>
+
 			<div class="content-block-title">Informações de contato</div>
 			<div class="list-block">
 				<ul>
@@ -75,6 +69,12 @@
 					</li>
 				</ul>
 			</div>
+
+			<div class="content-block-title">Regulamento</div>
+			<div class="list-block" id="pagesScreen">
+				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
+			</div>
+
 			<div class="content-block">
 			</div>
 
@@ -84,7 +84,7 @@
 			<div class="view view-main">
 				<div class="navbar">
 					<div class="navbar-inner">
-						<div class="center sliding">Gincana Oakian</div>
+						<div class="center sliding">Gincana Social Força em Ação</div>
 						<div class="right">
 							<a href="#" class="open-panel link icon-only"><i class="fa fa-bars"></i></a>
 						</div>
@@ -104,6 +104,7 @@
 		<script type="text/javascript" src="assets/js/framework7.min.js"></script>
 		<script type="text/javascript" src="assets/js/firebase.js"></script>
 		<script type="text/javascript" src="assets/js/moment-locales.js"></script>
+		<script type="text/javascript" src="assets/js/features/camera.js"></script>
 		<script type="text/javascript" src="config.js"></script>
 		<script type="text/javascript" src="model/App.js"></script>
 		<script type="text/javascript" src="model/Feed.js"></script>
@@ -111,6 +112,9 @@
 		<script type="text/javascript" src="model/Team.js"></script>
 		<script type="text/javascript" src="model/User.js"></script>
 		<script type="text/javascript" src="model/Admin.js"></script>
+		<script type="text/javascript" src="model/Job.js"></script>
+		<script type="text/javascript" src="model/JobPic.js"></script>
+		<script type="text/javascript" src="model/Help.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="controller/Home.js"></script>
 		<script type="text/javascript" src="controller/Feeds.js"></script>
@@ -118,6 +122,8 @@
 		<script type="text/javascript" src="controller/Teams.js"></script>
 		<script type="text/javascript" src="controller/Contact.js"></script>
 		<script type="text/javascript" src="controller/Login.js"></script>
-		<script type="text/javascript" src="controller/Register.js"></script>
+		<script type="text/javascript" src="controller/Jobs.js"></script>
+		<script type="text/javascript" src="controller/HelpDesk.js"></script>
+		<script type="text/javascript" src="controller/TakeJobPic.js"></script>
 	</body>
 </html>
