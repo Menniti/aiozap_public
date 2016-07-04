@@ -4,13 +4,13 @@ function action_sheet_camera(id){
 		{
 			text: 'Tirar foto',
 			onClick: function () {
-				camera(null,id);
+				camera();
 			}
 		},
 		{
 			text: 'Álbum de fotos',
 			onClick: function () {
-				camera("album",id);
+				camera("album");
 			}
 		},
 		{
@@ -31,7 +31,6 @@ function camera(type,id){
 	}
 	function success(image) {
 		console.log(image);
-		alert(id);
 		localStorage.setItem("camera",JSON.stringify(image));
 		//upload(image,"/osphotos/"+id);
 	}
