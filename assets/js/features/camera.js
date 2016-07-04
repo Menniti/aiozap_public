@@ -21,7 +21,7 @@ function action_sheet_camera(id){
 	myApp.actions(this,buttons);
 }
 
-//CAMERA to LocalStorage
+//CAMERA TO LOCALSTORAGE
 function camera(type,id){
 	console.log(id);
 	if(type=="album"){
