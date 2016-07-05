@@ -52,12 +52,8 @@
 		<preference name="StatusBarBackgroundColor" value="#000000"/>
 	</gap:plugin>
 
-	<uses-permission android:name="android.permission.CAMERA" />
-	<uses-feature android:name="android.hardware.camera" />
-	<uses-feature android:name="android.hardware.camera.autofocus" />
-
 	<!-- Custom Preferences-->
-	<preference name="phonegap-version" value="3.7.0" />          <!-- all: current version of PhoneGap -->
+	<!--<preference name="phonegap-version" value="3.7.0" />-->          <!-- all: current version of PhoneGap -->
 	<!--<preference name="phonegap-version" value="3.5.0" />-->          <!-- all: current version of PhoneGap -->
 	<preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 	<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
