@@ -24,18 +24,6 @@
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
 	<gap:splash src="icons/splash.png"/>
 
-	<!--
-	<feature name="http://api.phonegap.com/1.0/camera"/>
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
-	<feature name="http://api.phonegap.com/1.0/network"/>
-	<feature name="http://api.phonegap.com/1.0/notification"/>
-	<feature name="http://api.phonegap.com/1.0/device"/>
-	<feature name="http://api.phonegap.com/1.0/file"/>
-	<feature name="http://api.phonegap.com/1.0/media"/>
-	<feature name="http://api.phonegap.com/1.0/battery"/>
-	<feature name="http://api.phonegap.com/1.0/contacts"/>
-	-->
-
 	<!-- ACCESS ORIGIN -->
 	<access origin="*" />
 
@@ -53,7 +41,7 @@
 	</gap:plugin>
 
 	<!-- Custom Preferences-->
-	<!--<preference name="phonegap-version" value="3.7.0" />-->          <!-- all: current version of PhoneGap -->
+	<preference name="phonegap-version" value="3.7.0" />          <!-- all: current version of PhoneGap -->
 	<!--<preference name="phonegap-version" value="3.5.0" />-->          <!-- all: current version of PhoneGap -->
 	<preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 	<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
