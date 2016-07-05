@@ -22,7 +22,7 @@ function action_sheet_camera(id){
 }
 
 //CAMERA TO LOCALSTORAGE
-function camera(id){
+function camera(type){
 	if(type=="album"){
 		navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM});
 	}else{
