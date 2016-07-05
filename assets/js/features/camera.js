@@ -1,27 +1,3 @@
-//CAMERA ACTION SHEET MOBILE
-function action_sheet_camera(id){
-	var buttons = [
-		{
-			text: 'Tirar foto',
-			onClick: function () {
-				camera();
-			}
-		},
-		{
-			text: 'Álbum de fotos',
-			onClick: function () {
-				camera("album");
-			}
-		},
-		{
-			text: 'Cancelar',
-			color: 'red'
-		},
-	];
-	myApp.actions(this,buttons);
-}
-
-//CAMERA TO LOCALSTORAGE
 function camera(type){
 	if(type=="album"){
 		navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM});
@@ -30,11 +6,9 @@ function camera(type){
 	}
 	function success(image) {
 		console.log(image);
-		localStorage.setItem("camera",JSON.stringify(image));
-		//upload(image,"/osphotos/"+id);
+		return(JSON.stringify(image));
 	}
 	function error(message) {
 		console.log('Failed because: ' + message);
 	}
 }
-

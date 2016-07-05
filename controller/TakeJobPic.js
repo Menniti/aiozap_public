@@ -7,13 +7,13 @@ App.prototype.TakeJobPicAction = function() {
 
 	var JobsActionSheet = window.Job.read();
 	JobsActionSheet.then(function(result) {
-		console.log(result);
 		var buttons = [];
 		var counter=0;
 		for(var i in result){
 			var button = {};
 				button.text = result[i].title;
-				button.onClick = function(){camera(null,Object.keys(result)[counter])};
+				//button.onClick = function(){camera(null,Object.keys(result)[counter])};
+				button.onClick = function(){camera()};
 				console.log(Object.keys(result)[counter]); 
 				buttons.push(button);
 			counter++;
