@@ -1,6 +1,7 @@
 /*
  * Copyright 2016 Felippe Gallo All Rights Reserved.
  */
+'use strict';
 
 var myApp = new Framework7();
 var $$ = Dom7;
@@ -8,9 +9,7 @@ var mainView = myApp.addView('.view-main', {
 	dynamicNavbar: true
 });
 
-'use strict';
-//window.onload = function() {
-function onLoad(){
+window.onload = function() {
 	window.App = new App();
 	window.Feed = new Feed();
 	window.Page = new Page();
@@ -25,7 +24,7 @@ function onLoad(){
 	if(!window.cordova){
 		setTimeout(function(){
 			onDeviceReady();
-		},5000);
+		},2500);
 	}
 }
 
