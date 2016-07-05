@@ -3,6 +3,9 @@ App.prototype.HelpDeskScreen = function() {
 	var div = $("#HelpDeskScreen");
 	var HelpDeskForm = $("#help-desk-form");
 	HelpDeskForm.on('submit', self.HelpDeskAction.bind(self));
+	if(window.App.auth){
+		$("#input_title").val(window.App.auth.currentUser.email);
+	}
 };
 
 App.prototype.HelpDeskAction = function(e) {
