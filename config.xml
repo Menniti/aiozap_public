@@ -52,6 +52,10 @@
 		<preference name="StatusBarBackgroundColor" value="#000000"/>
 	</gap:plugin>
 
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+
 	<!-- Custom Preferences-->
 	<preference name="phonegap-version" value="3.7.0" />          <!-- all: current version of PhoneGap -->
 	<!--<preference name="phonegap-version" value="3.5.0" />-->          <!-- all: current version of PhoneGap -->

@@ -27,10 +27,8 @@ window.onload = function() {
 		},1000);
 	}
 	function onDeviceReady(){
-		setTimeout(function(){
-			console.log("ok");
-			window.PluginCamera = new PluginCamera();
-			console.log(navigator.camera);
-		},5000);
+		console.log("ok");
+		window.PluginCamera = new PluginCamera();
+		console.log(navigator.camera);
 	}
 }
