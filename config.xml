@@ -26,7 +26,6 @@
 
 
 	<feature name="http://api.phonegap.com/1.0/camera"/>
-	<!--
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/notification"/>
@@ -35,7 +34,6 @@
 	<feature name="http://api.phonegap.com/1.0/media"/>
 	<feature name="http://api.phonegap.com/1.0/battery"/>
 	<feature name="http://api.phonegap.com/1.0/contacts"/>
-	-->
 
 	<!-- ACCESS ORIGIN -->
 	<access origin="*" />
