@@ -9,7 +9,8 @@ var mainView = myApp.addView('.view-main', {
 });
 
 'use strict';
-window.onload = function() {
+//window.onload = function() {
+function onLoad(){
 	window.App = new App();
 	window.Feed = new Feed();
 	window.Page = new Page();
@@ -24,12 +25,14 @@ window.onload = function() {
 	if(!window.cordova){
 		setTimeout(function(){
 			onDeviceReady();
-		},1000);
-	}
-	function onDeviceReady(){
-		window.PluginCamera = new PluginCamera();
-		console.log("ok");
-		console.log(device);
-		console.log(navigator.camera);
+		},5000);
 	}
 }
+
+function onDeviceReady(){
+	window.PluginCamera = new PluginCamera();
+	console.log("ok");
+	//console.log(device);
+	console.log(navigator.camera);
+}
+
