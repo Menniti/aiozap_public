@@ -1,3 +1,45 @@
+.list-block ul li:nth-child(1){background:#f8f8f8;}
+.list-block ul li:nth-child(2){background:#f3f3f3;}
+.list-block ul li:nth-child(3){background:#eeeeee;}
+.list-block ul li:nth-child(4){background:#e8e8e8;}
+.list-block ul li:nth-child(5){background:#e3e3e3;}
+.list-block ul li:nth-child(6){background:#dddddd;}
+.list-block ul li:nth-child(7){background:#d8d8d8;}
+.list-block ul li:nth-child(8){background:#d3d3d3;}
+.list-block ul li:nth-child(9){background:#cccccc;}
+.list-block ul li:nth-child(10){background:#c8c8c8;}
+.list-block ul li:nth-child(11){background:#c3c3c3;}
+.list-block ul li:nth-child(12){background:#bbbbbb;}
+.list-block ul li:nth-child(13){background:#b8b8b8;}
+.list-block ul li:nth-child(14){background:#b3b3b3;}
+
+.content-block-title{
+	color:#555;
+}
+
+.page{
+	background:#e0e0e0 !important;
+}
+
+.panel{
+	background:#ffffff !important;
+}
+
+.button{
+	border:0px;
+	background:#666;
+	color:white;
+	height:32px;
+}
+
+.list-block .item-inner:after{
+	background:transparent;
+}
+
+.content-block-inner, #TeamsDetailEditors,#ContactScreenAdmin,#ContactScreen{
+	border-top:5px solid #999;
+}
+
 .statusbar-overlay {
     background:#000;
 }
