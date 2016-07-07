@@ -17,7 +17,7 @@ App.prototype.TakeJobPicAction = function() {
 					JobPicture.then(function(resultPic) {
 						//console.log(resultPic);
 
-						window.JobPic.title = result[i].title;
+						window.JobPic.title = result[i].title+" "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 						window.JobPic.user = window.App.auth.currentUser.uid;
 						window.JobPic.job = result[i].id;
 						window.JobPic.active = 1;
