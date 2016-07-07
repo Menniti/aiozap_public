@@ -1,7 +1,7 @@
 function PluginCamera() {
 	this.cache = "";
 }
-PluginCamera.prototype.takePicture = function() {
+PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();
 	if(type=="album"){
