@@ -1,3 +1,7 @@
+.notifications .notification-item{
+	background:#333 !important;
+}
+
 .list-block ul li:nth-child(1){background:#f8f8f8;}
 .list-block ul li:nth-child(2){background:#f3f3f3;}
 .list-block ul li:nth-child(3){background:#eeeeee;}
