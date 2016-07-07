@@ -14,8 +14,24 @@ App.prototype.TakeJobPicAction = function() {
 				button.onClick = function(){
 					var JobId = Object.keys(result)[counter];
 					var JobPicture = window.PluginCamera.takePicture();
-					JobPicture.then(function(result) {
-						console.log(result);
+					JobPicture.then(function(resultPic) {
+						//console.log(resultPic);
+						
+
+
+						window.JobPic.title = result[i].title;
+						var JobPics = window.JobPic.create();
+						JobPics.then(function(resultCreate) {
+							if(result==true){
+								myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
+							}else{
+								myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
+							}
+						});		
+
+
+
+
 					});
 				};
 				buttons.push(button);
