@@ -3,6 +3,7 @@ function Team() {
 	this.id;
 	this.file;
 	this.title;
+	this.color;
 	this.description;
 }
 
@@ -42,9 +43,11 @@ Team.prototype.read = function(id) {
 Team.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
+	var color = this.color;
 	var description = this.description;
 	var inputData = {
 		title: title,
+		color: color,
 		description: description
 	};
 	return firebase.database().ref('teams/'+id).update(inputData).then(function(result) {
