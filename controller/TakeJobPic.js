@@ -25,6 +25,7 @@ App.prototype.TakeJobPicAction = function() {
 						var JobPics = window.JobPic.create();
 						JobPics.then(function(resultCreate) {
 							if(resultCreate){
+								console.log(pic);
 								var file = pic;
 								window.JobPic.id = resultCreate;
 								window.JobPic.file = file;
