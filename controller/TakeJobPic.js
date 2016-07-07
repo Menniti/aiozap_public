@@ -4,7 +4,6 @@ App.prototype.TakeJobPicScreen = function() {
 
 App.prototype.TakeJobPicAction = function() {
 	var self = this;
-
 	var JobsActionSheet = window.Job.read();
 	JobsActionSheet.then(function(result) {
 		var buttons = [];
@@ -12,8 +11,13 @@ App.prototype.TakeJobPicAction = function() {
 		for(var i in result){
 			var button = {};
 				button.text = result[i].title;
-				button.onClick = function(){window.PluginCamera.takePicture(null,Object.keys(result)[counter])};
-				console.log(Object.keys(result)[counter]); 
+				button.onClick = function(){
+					var JobId = Object.keys(result)[counter];
+					var JobPicture = window.PluginCamera.takePicture();
+					JobPicture.then(function(result) {
+						console.log(result);
+					});
+				};
 				buttons.push(button);
 			counter++;
 		}
@@ -26,3 +30,4 @@ App.prototype.TakeJobPicAction = function() {
 	});		
 	
 };
+
