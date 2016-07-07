@@ -1,8 +1,7 @@
 function PluginCamera() {
 	this.cache = "";
 }
-//PluginCamera.prototype.takePicture = function(type,id) {
-function takePicture(type,id){
+PluginCamera.prototype.takePicture = function(type,id) {
 	var self = this;
 	console.log(id);
 	if(type=="album"){

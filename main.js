@@ -31,7 +31,7 @@ window.onload = function() {
 function onDeviceReady(){
 	window.PluginCamera = new PluginCamera();
 	console.log("ok");
-	//console.log(device);
+	console.log(device);
 	console.log(navigator.camera);
 }
 
