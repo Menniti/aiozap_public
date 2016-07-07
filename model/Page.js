@@ -16,10 +16,11 @@ Page.prototype.create = function() {
 		created: new Date().getTime(),
 		description: description
 	};
-	return firebase.database().ref('pages/').push(inputData).then(function(result) {
-		return true;
+	var newKey = firebase.database().ref().child('pages').push().key;
+	return firebase.database().ref('pages/'+newKey).set(inputData).then(function(result) {
+		return newKey;
 	},function(error) {
-		return false;
+		return null;
 	});	
 };
 

@@ -16,7 +16,7 @@ App.prototype.HelpDeskAction = function(e) {
 	var Help = window.Help.create();
 	Help.then(function(result) {
 		console.log(result);
-		if(result==true){
+		if(result){
 			mainView.back();
 			myApp.alert(self.msgSuccessForm,self.msgDefaultTitle);
 		}else{

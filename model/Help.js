@@ -16,10 +16,11 @@ Help.prototype.create = function() {
 		created: new Date().getTime(),
 		description: description
 	};
-	return firebase.database().ref('helps/').push(inputData).then(function(result) {
-		return true;
+	var newKey = firebase.database().ref().child('helps').push().key;
+	return firebase.database().ref('helps/'+newKey).set(inputData).then(function(result) {
+		return newKey;
 	},function(error) {
-		return false;
+		return null;
 	});	
 };
 

@@ -22,10 +22,11 @@ Job.prototype.create = function() {
 		start_date: start_date,
 		end_date: end_date
 	};
-	return firebase.database().ref('jobs/').push(inputData).then(function(result) {
-		return true;
+	var newKey = firebase.database().ref().child('jobs').push().key;
+	return firebase.database().ref('jobs/'+newKey).set(inputData).then(function(result) {
+		return newKey;
 	},function(error) {
-		return false;
+		return null;
 	});	
 };
 

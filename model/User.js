@@ -51,7 +51,6 @@ User.prototype.create = function() {
 			is_editor: 0,
 			team: 0
 		};
-		//var newKey = firebase.database().ref().child('users').push().key;
 		var newKey = firebase.auth().currentUser.uid;
 		firebase.database().ref('users/'+newKey).set(inputData);
 		deferred.resolve(true);

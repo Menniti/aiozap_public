@@ -17,10 +17,11 @@ Team.prototype.create = function() {
 		created: new Date().getTime(),
 		description: description
 	};
-	return firebase.database().ref('teams/').push(inputData).then(function(result) {
-		return true;
+	var newKey = firebase.database().ref().child('teams').push().key;
+	return firebase.database().ref('teams/'+newKey).set(inputData).then(function(result) {
+		return newKey;
 	},function(error) {
-		return false;
+		return null;
 	});	
 };
 
