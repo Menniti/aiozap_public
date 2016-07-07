@@ -12,8 +12,14 @@ function JobPic() {
 JobPic.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
+	var job = this.job || '';
+	var user = this.user || '';
+	var active = this.active || 0;
 	var inputData = {
 		title: title,
+		job: job,
+		user: user,
+		active: active,
 		created: new Date().getTime(),
 		active: 1,
 	};

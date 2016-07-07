@@ -16,10 +16,12 @@ App.prototype.TakeJobPicAction = function() {
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
 						//console.log(resultPic);
-						
-
 
 						window.JobPic.title = result[i].title;
+						window.JobPic.user = window.App.auth.currentUser.uid;
+						window.JobPic.job = result[i].id;
+						window.JobPic.active = 1;
+
 						var JobPics = window.JobPic.create();
 						JobPics.then(function(resultCreate) {
 							if(result==true){
