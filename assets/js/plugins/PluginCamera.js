@@ -12,7 +12,8 @@ PluginCamera.prototype.takePicture = function(type) {
 	function success(image) {
 		console.log(image);
 		self.cache = JSON.stringify(image);
-		deferred.resolve(JSON.stringify(image));
+		//deferred.resolve(JSON.stringify(image));
+		deferred.resolve(image);
 	}
 	function error(message) {
 		console.log('Failed because: ' + message);
