@@ -14,12 +14,12 @@ App.prototype.TakeJobPicAction = function() {
 				button.text = result[i].title;
 				button.onClick = function(){
 					var JobId = JobIds[counter];
-						console.log("\n\n"+JobId);
+						console.log(JobId);
 					//TAKE PICTURE
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
 						var pic = resultPic;
-						console.log("\n\n"+JobId);
+						console.log(JobId);
 						window.JobPic.title = result[i].title+" "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 						window.JobPic.user = window.App.auth.currentUser.uid;
 						window.JobPic.job = JobId;
