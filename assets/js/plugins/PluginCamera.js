@@ -43,8 +43,7 @@ PluginCamera.prototype.takePicture = function(type) {
 
 	}
 	function error(message) {
-		console.log('Failed because: ' + message);
-		deferred.reject(false);
+		deferred.reject(message);
 	}
 	return deferred.promise();
 };
