@@ -8,12 +8,12 @@ App.prototype.TakeJobPicAction = function() {
 	JobsActionSheet.then(function(result) {
 		var buttons = [];
 		var counter=0;
+		var JobIds = Object.keys(result);
 		for(var i in result){
 			var button = {};
 				button.text = result[i].title;
 				button.onClick = function(){
-					var JobId = Object.keys(result)[counter];
-						console.log("JOBID: "+JobId);
+					var JobId = JobIds[counter];
 					//TAKE PICTURE
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
