@@ -17,9 +17,10 @@ App.prototype.TakeJobPicAction = function() {
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
 						//GET REAL FILE URL
-						//var resolvePicture = window.PluginFile.resolveFile(resultPic);
+						//var FileToBlob = window.FileToBlob.getFileToBlob(resultPic);
 						//resolvePicture.then(function(pictureFile) {
-							console.log("JOBID: "+JobId)
+							console.log("JOBID: "+JobId);
+							console.log("PIC: "+resultPic);
 							var pic = resultPic;
 							window.JobPic.title = result[i].title+" "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 							window.JobPic.user = window.App.auth.currentUser.uid;

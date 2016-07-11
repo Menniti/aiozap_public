@@ -31,6 +31,5 @@ function onDeviceReady(){
 	window.Job = new Job();
 	window.JobPic = new JobPic();
 	window.PluginCamera = new PluginCamera();
-	window.PluginFile = new PluginFile();
 }
 
