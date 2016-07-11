@@ -15,8 +15,7 @@ App.prototype.TakeJobPicAction = function() {
 					var JobId = Object.keys(result)[counter];
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
-
-						var resolvePicture = window.PluginCamera.resolveFile(resultPic);
+						var resolvePicture = window.PluginFile.resolveFile(resultPic);
 						resolvePicture.then(function(pictureFile) {
 							console.log(pictureFile);
 							var pic = pictureFile;
