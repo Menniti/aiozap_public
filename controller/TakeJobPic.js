@@ -13,17 +13,18 @@ App.prototype.TakeJobPicAction = function() {
 				button.text = result[i].title;
 				button.onClick = function(){
 					var JobId = Object.keys(result)[counter];
+					//TAKE PICTURE
 					var JobPicture = window.PluginCamera.takePicture();
 					JobPicture.then(function(resultPic) {
+						//GET REAL FILE URL
 						var resolvePicture = window.PluginFile.resolveFile(resultPic);
 						resolvePicture.then(function(pictureFile) {
-							console.log(pictureFile);
 							var pic = pictureFile;
 							window.JobPic.title = result[i].title+" "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 							window.JobPic.user = window.App.auth.currentUser.uid;
 							window.JobPic.job = JobId;
 							window.JobPic.active = 1;
-
+							//CREATE ENTRY ON DB
 							var JobPics = window.JobPic.create();
 							JobPics.then(function(resultCreate) {
 								if(resultCreate){
@@ -31,6 +32,7 @@ App.prototype.TakeJobPicAction = function() {
 									var file = pic;
 									window.JobPic.id = resultCreate;
 									window.JobPic.file = file;
+									//UPLOAD PICTURE
 									var JobPics = window.JobPic.uploadFile();
 									$.when(JobPics).then(function(result) {
 										var uploadTask = result;
@@ -43,6 +45,7 @@ App.prototype.TakeJobPicAction = function() {
 											}, function() {
 												var downloadURL = uploadTask.snapshot.downloadURL;
 												window.JobPic.file = downloadURL;
+												//UPDATE CREATED ENTRY ON DB
 												var JobPics = window.JobPic.updateFile();
 												JobPics.then(function(result) {
 													if(result==true){
