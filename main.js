@@ -30,6 +30,7 @@ function onDeviceReady(){
 	window.Help = new Help();
 	window.Job = new Job();
 	window.JobPic = new JobPic();
+	window.Report = new Report();
 	window.PluginCamera = new PluginCamera();
 }
 

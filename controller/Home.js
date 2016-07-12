@@ -30,6 +30,17 @@ App.prototype.HomeScreen = function() {
 		self.ContactScreen();
 	});
 
+	myApp.onPageAfterAnimation('Reports', function (page) {
+		self.ReportsScreen();
+	});
+	myApp.onPageAfterAnimation('ReportsDetail', function (page) {
+		self.ReportsDetailAction();
+	});
+
+	myApp.onPageAfterAnimation('Ranking', function (page) {
+		self.RankingScreen();
+	});
+
 	myApp.onPageAfterAnimation('Login', function (page) {
 		self.LoginScreen();
 	});

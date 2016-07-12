@@ -1,0 +1,26 @@
+			<div class="table">
+				<table class="table">
+					<thead>
+						<tr>
+							<td></td>
+							{{#if teams}}
+								{{#each teams}}
+									<td style="text-align:center;">{{title}}</td>
+								{{/each}}
+							{{/if}}
+						</tr>
+					</thead>
+					</tbody>
+					{{#each points}}
+						<tr>
+							{{#each this}}
+								<td style="text-align:center;">
+									{{this}}
+								</td>
+							{{/each}}
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+			</div>
+

@@ -20,9 +20,15 @@ App.prototype.ContactScreen = function() {
 
 	var Admins = window.Admin.read();
 	Admins.then(function(result) {
+		var coords=[];
+		for (var i in result){
+			if(result[i].email=="gincanasocial@ccpsa.com.br"){
+				coords.push(result[i]);
+			}
+		}
 		$.get("templates/Contact.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
-			var html = compiledTemplate(result);
+			var html = compiledTemplate(coords);
 			divAdmin.html(html);
 		});
 	});		

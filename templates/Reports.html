@@ -1,0 +1,15 @@
+				<ul>
+					{{#if this}}
+						{{#each this}}
+							<li>
+								<a href="views/ReportsDetail.html?id={{id}}" class="close-panel item-link item-content">
+									<div class="item-media"></div>
+									<div class="item-inner">
+										<div class="item-title">{{title}}</div>
+										<div class="item-after">{{created}}</div>
+									</div>
+								</a>
+							</li>
+						{{/each}}
+					{{/if}}
+				</ul>
