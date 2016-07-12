@@ -4,6 +4,31 @@ function PluginCamera() {
 PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();
+	var buttons = [
+		{
+			text: 'Tirar foto',
+			onClick: function () {
+				deferred.resolve(self.takePictureAction());
+			}
+		},
+		{
+			text: 'Álbum de fotos',
+			onClick: function () {
+				deferred.resolve(self.takePictureAction("album"));
+			}
+		},
+		{
+			text: 'Cancelar',
+			color: 'red'
+		},
+	];
+	myApp.actions(this,buttons);
+	return deferred.promise();
+};
+
+PluginCamera.prototype.takePictureAction = function(type) {
+	var self = this;
+	var deferred = $.Deferred();
 	if(type=="album"){
 		navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM});
 	}else{
