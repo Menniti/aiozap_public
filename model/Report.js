@@ -14,11 +14,17 @@ function Report() {
 Report.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
-	var points = this.points;
+	var description = this.description || "";
+	var points = this.points || 0;
+	var active = this.active || 0;
+	var user = this.user || "";
+	var job = this.job || "";
 	var inputData = {
 		title: title,
 		points: points,
+		user: user,
+		job: job,
+		active: active,
 		created: new Date().getTime(),
 		description: description
 	};

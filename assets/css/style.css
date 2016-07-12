@@ -1,3 +1,4 @@
+/*
 .list-block ul li:nth-child(1){background:#f8f8f8;}
 .list-block ul li:nth-child(2){background:#f3f3f3;}
 .list-block ul li:nth-child(3){background:#eeeeee;}
@@ -23,6 +24,19 @@
 
 .panel{
 	background:#ffffff !important;
+}
+*/
+
+tr{
+	background:white;
+	text-align:center;
+	font-size:12px;
+}
+
+td{
+	padding:10px 0px;
+	width:15vw;
+	display:inline-block;
 }
 
 .notifications .notification-item{
@@ -92,6 +106,19 @@
 	line-height:20px;
 	font-size:0.9em;
 }
+
+.ranking-img{
+	margin:0 auto;
+	overflow:hidden;
+	width:35px;
+	height:22px;
+}
+
+.ranking-img > img{
+	width:35px;
+	min-height:22px;
+}
+
 
 .jobpic-img{
 	border-radius:10px;

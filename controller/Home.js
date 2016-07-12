@@ -49,6 +49,10 @@ App.prototype.HomeScreen = function() {
 		self.HelpDeskScreen();
 	});
 
+	myApp.onPageAfterAnimation('ReportsAdd', function (page) {
+		self.ReportsAddScreen();
+	});
+
 	if(self.checkLogin()){
 		$("#SidebarLoggedIn").show();
 		$("#SidebarLoggedOut").hide();
