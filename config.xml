@@ -20,8 +20,8 @@
 	<icon src="icons/iphone76.png" gap:platform="ios" width="76" height="76" />
 	<icon src="icons/iphone120.png" gap:platform="ios" width="120" height="120" />
 	<icon src="icons/iphone152.png" gap:platform="ios" width="152" height="152" />
-	<gap:splash src="icons/splash.png"/>
 	<!--
+	<gap:splash src="icons/splash.png"/>
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="320" height="480" />
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
 	-->
@@ -68,8 +68,8 @@
 	</gap:plugin>
 
 	<!-- Custom Preferences-->
-	<preference name="phonegap-version" value="3.7.0" />          <!-- all: current version of PhoneGap -->
-	<!--<preference name="phonegap-version" value="3.5.0" />-->          <!-- all: current version of PhoneGap -->
+	<!--<preference name="phonegap-version" value="3.7.0" />          <!-- all: current version of PhoneGap -->
+	<preference name="phonegap-version" value="3.5.0" />-->          <!-- all: current version of PhoneGap -->
 	<preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 	<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
 	<preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
