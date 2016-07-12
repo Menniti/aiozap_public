@@ -1,6 +1,7 @@
 function PluginCamera() {
 	this.cache = "";
 }
+/*
 PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();
@@ -25,8 +26,9 @@ PluginCamera.prototype.takePicture = function(type) {
 	myApp.actions(this,buttons);
 	return deferred.promise();
 };
+*/
 
-PluginCamera.prototype.takePictureAction = function(type) {
+PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();
 	if(type=="album"){
