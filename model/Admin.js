@@ -14,12 +14,12 @@ Admin.prototype.login = function() {
 	var email = this.email;
 	var password = this.password;
 	if(!email || !password){
-		deferred.reject(false);
+		deferred.resolve(false);
 	}else{
 		firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
 			deferred.resolve(true);
 		}, function(error) {
-			deferred.reject(error);
+			deferred.resolve(error);
 		});
 	}
 	return deferred.promise();
@@ -32,7 +32,7 @@ Admin.prototype.logout = function() {
 	firebase.auth().signOut().then(function() {
 		deferred.resolve(true);
 	}, function(error) {
-		deferred.reject(error);
+		deferred.resolve(error);
 	});
 	return deferred.promise();
 };
@@ -51,7 +51,7 @@ Admin.prototype.create = function() {
 		firebase.database().ref('admins/'+newKey).set(inputData);
 		deferred.resolve(true);
 	}, function(error) {
-		deferred.reject(error);
+		deferred.resolve(error);
 	});
 	return deferred.promise();
 };

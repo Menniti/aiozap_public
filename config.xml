@@ -22,8 +22,9 @@
 	<icon src="icons/iphone152.png" gap:platform="ios" width="152" height="152" />
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="320" height="480" />
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
-	<gap:splash src="icons/splash.png"/>
+	<gap:splash src="icons/android.png"/>
 	<preference name="SplashMaintainAspectRatio" value="true" />
+	<preference name="BackgroundColor" value="#ffffff" />
 
 	<!-- ACCESS ORIGIN -->
 	<access origin="*" />

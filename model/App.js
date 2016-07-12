@@ -7,6 +7,11 @@ function App() {
 	this.msgDefaultTitle = "Aviso";
 	this.msgSuccessForm = "Formulário enviado com sucesso";
 	this.initFirebase();
+	this.msgErrors = [];
+	this.msgErrors['auth/user-not-found'] = "Nenhum usuário registrado com esse email";
+	this.msgErrors['auth/wrong-password'] = "Senha incorreta";
+	this.msgErrors['auth/weak-password'] = "A senha deve ter pelo menos 6 caracteres";
+	this.msgErrors['auth/email-already-in-use'] = "Esse email já consta como registrado";
 }
 
 App.prototype.initFirebase = function() {

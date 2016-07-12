@@ -7,6 +7,7 @@ App.prototype.LoginScreen = function() {
 };
 
 App.prototype.LoginAction = function(e) {
+	var self = this;
 	e.preventDefault();
 	window.User.email = $("#input_email").val();
 	window.User.password = $("#input_password").val();
@@ -16,12 +17,13 @@ App.prototype.LoginAction = function(e) {
 		if(result==true){
 			mainView.back();
 		}else{
-			myApp.alert(result);
+			myApp.alert(self.msgErrors[result.code],self.msgDefaultTitle);
 		}
 	})
 };
 
 App.prototype.RegisterAction = function(e) {
+	var self = this;
 	e.preventDefault();
 	window.User.email = $("#input_register_email").val();
 	window.User.password = $("#input_register_password").val();
@@ -31,7 +33,7 @@ App.prototype.RegisterAction = function(e) {
 		if(result==true){
 			mainView.back();
 		}else{
-			myApp.alert(result);
+			myApp.alert(self.msgErrors[result.code],self.msgDefaultTitle);
 		}
 	})
 };
