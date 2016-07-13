@@ -74,7 +74,7 @@ App.prototype.ReportsAddAction = function(e) {
 		var pic = resultPic;
 		//CREATE ENTRY ON DB
 		var Report = window.Report.create();
-		Report.then(function(result) {
+		Report.then(function(resultCreate) {
 			if(resultCreate){
 				var file = pic;
 				window.Report.id = resultCreate;

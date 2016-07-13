@@ -7,6 +7,7 @@ function User() {
 	this.is_editor;
 	this.name;
 	this.phone;
+	this.type;
 	this.password;
 }
 
@@ -16,12 +17,12 @@ User.prototype.login = function() {
 	var email = this.email;
 	var password = this.password;
 	if(!email || !password){
-		deferred.reject(false);
+		deferred.resolve(false);
 	}else{
 		firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
 			deferred.resolve(true);
 		}, function(error) {
-			deferred.reject(error);
+			deferred.resolve(error);
 		});
 	}
 	return deferred.promise();
@@ -34,7 +35,7 @@ User.prototype.logout = function() {
 	firebase.auth().signOut().then(function() {
 		deferred.resolve(true);
 	}, function(error) {
-		deferred.reject(error);
+		deferred.resolve(error);
 	});
 	return deferred.promise();
 };
@@ -44,9 +45,13 @@ User.prototype.create = function() {
 	var deferred = $.Deferred();
 	var email = this.email;
 	var password = this.password;
+	var type = this.type || "";
+	var team = this.team || "";
 	firebase.auth().createUserWithEmailAndPassword(email,password).then(function() {
 		var inputData = {
 			email: email,
+			type: type,
+			team: team,
 			created: new Date().getTime(),
 			is_editor: 0,
 			team: 0
@@ -55,7 +60,7 @@ User.prototype.create = function() {
 		firebase.database().ref('users/'+newKey).set(inputData);
 		deferred.resolve(true);
 	}, function(error) {
-		deferred.reject(error);
+		deferred.resolve(error);
 	});
 	return deferred.promise();
 };
@@ -82,11 +87,13 @@ User.prototype.update = function() {
 	var is_editor = this.is_editor;
 	var phone = this.phone;
 	var team = this.team;
+	var type = this.type;
 	var inputData = {
 		phone: phone,
 		name: name,
 		is_editor: is_editor,
 		team: team,
+		type: type,
 	};
 	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
 		return true;

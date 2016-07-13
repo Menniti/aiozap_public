@@ -53,6 +53,10 @@ App.prototype.HomeScreen = function() {
 		self.ReportsAddScreen();
 	});
 
+	myApp.onPageAfterAnimation('Gallery', function (page) {
+		self.GalleryScreen();
+	});
+
 	if(self.checkLogin()){
 		$("#SidebarLoggedIn").show();
 		$("#SidebarLoggedOut").hide();
