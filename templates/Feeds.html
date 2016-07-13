@@ -2,7 +2,7 @@
 						{{#each this}}
 							<div class="card demo-card-header-pic">
 								{{#if file}}
-									<div style="background-image:url({{file}})" valign="bottom" class="card-header color-white no-border"></div>
+									<div style="background-image:url({{file}})" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();" valign="bottom" class="card-header color-white no-border"></div>
 								{{/if}}
 								<div class="card-content">
 									<div class="card-content-inner">

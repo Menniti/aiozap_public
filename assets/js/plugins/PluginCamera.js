@@ -1,6 +1,33 @@
 function PluginCamera() {
 	this.cache = "";
 }
+/*
+PluginCamera.prototype.takePicture = function(type) {
+	var self = this;
+	var deferred = $.Deferred();
+	var buttons = [
+		{
+			text: 'Tirar foto',
+			onClick: function () {
+				deferred.resolve(self.takePictureAction());
+			}
+		},
+		{
+			text: 'Álbum de fotos',
+			onClick: function () {
+				deferred.resolve(self.takePictureAction("album"));
+			}
+		},
+		{
+			text: 'Cancelar',
+			color: 'red'
+		},
+	];
+	myApp.actions(this,buttons);
+	return deferred.promise();
+};
+*/
+
 PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();

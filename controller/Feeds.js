@@ -13,6 +13,17 @@ App.prototype.FeedsScreen = function() {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(resultRev);
 			div.html(html);
+
+
+			/*var ptrContent = $$('.pull-to-refresh-content');
+			ptrContent.on('refresh', function (e) {
+				setTimeout(function () {
+					myApp.pullToRefreshDone();
+					self.FeedsScreen();
+				}, 2000);
+			});*/
 		});
 	});		
 };
+
+

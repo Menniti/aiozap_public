@@ -37,6 +37,20 @@
 				</ul>
 			</div>
 
+			<div class="content-block-title">Ranking</div>
+			<div class="list-block">
+				<ul>
+					<li>
+						<a href="views/Ranking.html" class="close-panel item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Ver pontuações</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+
 			<div class="content-block-title">Help Desk</div>
 			<div class="list-block">
 				<ul>
@@ -50,7 +64,7 @@
 				</ul>
 			</div>
 
-			<div class="content-block-title">Atividades</div>
+			<div class="content-block-title">Tarefas</div>
 			<div class="list-block" id="jobsScreen">
 				<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
 			</div>
@@ -95,6 +109,13 @@
 				</div>
 				<div class="pages navbar-through toolbar-through">
 					<div data-page="index" class="page">
+
+						<!--<div class="pull-to-refresh-content" data-ptr-distance="55">
+						<div class="pull-to-refresh-layer">
+							<div class="preloader" style="padding-top:88px;"></div>
+							<div class="pull-to-refresh-arrow"></div>
+						</div>-->
+
 						<div class="page-content" id="feedsScreen">
 							<div class="loading"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i></div>
 						</div>
@@ -122,6 +143,7 @@
 		<script type="text/javascript" src="model/Job.js"></script>
 		<script type="text/javascript" src="model/JobPic.js"></script>
 		<script type="text/javascript" src="model/Help.js"></script>
+		<script type="text/javascript" src="model/Report.js"></script>
 		<!-- MAIN -->
 		<script type="text/javascript" src="main.js"></script>
 		<!-- CONTROLLERS -->
@@ -134,9 +156,9 @@
 		<script type="text/javascript" src="controller/Jobs.js"></script>
 		<script type="text/javascript" src="controller/HelpDesk.js"></script>
 		<script type="text/javascript" src="controller/TakeJobPic.js"></script>
+		<script type="text/javascript" src="controller/Ranking.js"></script>
+		<script type="text/javascript" src="controller/Reports.js"></script>
 		<!-- PLUGINS -->
 		<script type="text/javascript" src="assets/js/plugins/PluginCamera.js"></script>
-		<script type="text/javascript" src="assets/js/plugins/PluginFile.js"></script>
-		<script type="text/javascript" src="assets/js/plugins/PluginFileToBlob.js"></script>
 	</body>
 </html>

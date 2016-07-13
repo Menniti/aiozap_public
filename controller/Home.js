@@ -30,12 +30,27 @@ App.prototype.HomeScreen = function() {
 		self.ContactScreen();
 	});
 
+	myApp.onPageAfterAnimation('Reports', function (page) {
+		self.ReportsScreen();
+	});
+	myApp.onPageAfterAnimation('ReportsDetail', function (page) {
+		self.ReportsDetailAction();
+	});
+
+	myApp.onPageAfterAnimation('Ranking', function (page) {
+		self.RankingScreen();
+	});
+
 	myApp.onPageAfterAnimation('Login', function (page) {
 		self.LoginScreen();
 	});
 
 	myApp.onPageAfterAnimation('HelpDesk', function (page) {
 		self.HelpDeskScreen();
+	});
+
+	myApp.onPageAfterAnimation('ReportsAdd', function (page) {
+		self.ReportsAddScreen();
 	});
 
 	if(self.checkLogin()){

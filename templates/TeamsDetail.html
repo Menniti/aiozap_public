@@ -1,14 +1,24 @@
 				{{#js_compare "this.file"}}
 					<div style="background-image:url({{file}})" class="content-image"></div>
 				{{/js_compare}}
-				<div class="content-block-title">
-					EQUIPE {{title}}
-				</div>
-				{{#if description}}
+				{{#js_compare "this.description"}}
+					<div class="content-block-title">
+						EQUIPE {{title}}
+					</div>
 					<div class="content-block">
 						<div class="content-block-inner" style="border-top:5px solid {{color}}">
 							{{description}}
 						</div>
 					</div>
-				{{/description}}
+				{{/js_compare}}
+				{{#js_compare "this.company"}}
+					<div class="content-block-title">
+						INSTITUIÇÕES
+					</div>
+					<div class="content-block">
+						<div class="content-block-inner" style="border-top:5px solid {{color}}">
+							{{company}}
+						</div>
+					</div>
+				{{/js_compare}}
 

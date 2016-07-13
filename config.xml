@@ -23,6 +23,7 @@
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="320" height="480" />
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
 	<gap:splash src="icons/splash.png"/>
+	<preference name="SplashMaintainAspectRatio" value="true" />
 
 	<!-- ACCESS ORIGIN -->
 	<access origin="*" />
