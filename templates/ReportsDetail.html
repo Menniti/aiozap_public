@@ -9,6 +9,7 @@
 		<form id="report-detail-form">
 			<div class="list-block">
 				<ul>
+					{{#js_compare "this.can_validate==1"}}
 					<li>
 						<div class="item-content">
 							<div class="item-inner">
@@ -22,12 +23,15 @@
 							</div>
 						</div>
 					</li>
+					{{else}}
+						<input type="hidden" id="input_active" value="{{active}}">
+					{{/js_compare}}
 					<li>
 						<div class="item-content">
 							<div class="item-inner">
 								<div class="item-title label">Pontuação</div>
 								<div class="item-input">
-									<input type="number" id="input_points" placeholder="Digite a pontuação" value={{points}}>
+									<input type="number" id="input_points" placeholder="Digite a pontuação"  {{#js_compare "this.locked==1"}} disabled {{/js_compare}} value={{points}}>
 								</div>
 							</div>
 						</div>
@@ -37,7 +41,7 @@
 							<div class="item-inner">
 								<div class="item-title label">Atividade</div>
 								<div class="item-input">
-									<select class="form-control" id="input_job">
+									<select class="form-control" id="input_job"  {{#js_compare "this.locked==1"}} disabled {{/js_compare}}>
 									</select>
 								</div>
 							</div>
@@ -48,7 +52,7 @@
 							<div class="item-inner">
 								<div class="item-title label">Usuário</div>
 								<div class="item-input">
-									<select class="form-control" id="input_user">
+									<select class="form-control" id="input_user" {{#js_compare "this.locked==1"}} disabled {{/js_compare}}>
 									</select>
 								</div>
 							</div>
@@ -73,6 +77,7 @@
 							</div>
 						</div>
 					</li>-->
+					{{#js_compare "this.locked!=1"}}
 					<li>
 						<div class="item-content">
 							<div class="item-inner">
@@ -82,6 +87,7 @@
 							</div>
 						</div>
 					</li>
+					{{/js_compare}}
 				</ul>
 			</div>
 		</form>

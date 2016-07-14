@@ -1,26 +1,41 @@
 App.prototype.ReportsScreen = function() {
 	var div = $("#ReportsScreen");
 	var self = this;
-	var Reports = window.Report.read();
-	Reports.then(function(result) {
 
-		resultRev = [];
-		for(var i in result){
-			if(result[i].user == App.auth.currentUser.uid){
-				result[i].id = i;
-				result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
-				resultRev.push(result[i]);
-			}else if(result[i].user == 11){
-				//Caso colaborador, mostra seus relatorios e de sua equipe
+	var Users = window.User.read();
+	Users.then(function(resultUser) {
+		var Reports = window.Report.read();
+		Reports.then(function(result) {
+			resultRev = {};
+			resultMyself = [];
+			resultTeam = [];
+			for(var i in result){
+				if(result[i].user == App.auth.currentUser.uid){
+					result[i].id = i;
+					result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
+					resultMyself.push(result[i]);
+				}
+
+				if(resultUser[App.auth.currentUser.uid].is_editor==1 && result[i].user != App.auth.currentUser.uid && resultUser[App.auth.currentUser.uid].team==resultUser[result[i].user].team){
+					result[i].id = i;
+					result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
+					resultTeam.push(result[i]);
+				}
 			}
-		}
-		resultRev.reverse();
-		$.get("templates/Reports.html", function(temp) {
-			var compiledTemplate = Template7.compile(temp);
-			var html = compiledTemplate(resultRev);
-			div.html(html);
-		});
+			resultMyself.reverse();
+			resultTeam.reverse();
+
+			resultRev.resultMyself = resultMyself;
+			resultRev.resultTeam = resultTeam;
+
+			$.get("templates/Reports.html", function(temp) {
+				var compiledTemplate = Template7.compile(temp);
+				var html = compiledTemplate(resultRev);
+				div.html(html);
+			});
+		});		
 	});		
+
 };
 
 App.prototype.ReportsDetailScreen = function() {
@@ -28,49 +43,66 @@ App.prototype.ReportsDetailScreen = function() {
 	var id = mainView.url.split("id=")[1];
 
 	var div = $("#ReportsDetail");
-	var Reports = window.Report.read(id);
-	Reports.then(function(result) {
-		console.log(result);
-		$.get("templates/ReportsDetail.html", function(temp) {
 
-			var compiledTemplate = Template7.compile(temp);
-			var html = compiledTemplate(result);
-			div.html(html);
-
-			var ReportDetailForm = $("#report-detail-form");
-			ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
-
-			var Jobs = window.Job.read();
-			Jobs.then(function(resultChild) {
-				var div = $("#input_job");
-				$.get("templates/ReportsEditJobSelect.html", function(temp) {
-					var compiledTemplate = Template7.compile(temp);
-					var html = compiledTemplate(resultChild);
-					div.html(html);
-					div.val(result.job);
-				});
-			});		
+	var Users = window.User.read(App.auth.currentUser.uid);
+	Users.then(function(resultUser) {
+		var Reports = window.Report.read(id);
+		Reports.then(function(result) {
+			result.locked = 1;
+			result.can_validate = 0;
+		
+			if(result.active==0){
+				result.locked = 0;
+			}
+			if(resultUser.is_editor==1){
+				result.locked = 0;
+				result.can_validate = 1;
+			}
 
 
-			var Users = window.User.read();
-			Users.then(function(resultChild) {
-				var div = $("#input_user");
-				$.get("templates/ReportsEditUserSelect.html", function(temp) {
-					var compiledTemplate = Template7.compile(temp);
-					var html = compiledTemplate(resultChild);
-					div.html(html);
-					div.val(result.user);
-				});
-			});		
-		});
+			$.get("templates/ReportsDetail.html", function(temp) {
+
+				var compiledTemplate = Template7.compile(temp);
+				var html = compiledTemplate(result);
+				div.html(html);
+
+				var ReportDetailForm = $("#report-detail-form");
+				ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
+
+				var Jobs = window.Job.read();
+				Jobs.then(function(resultChild) {
+					var div = $("#input_job");
+					$.get("templates/ReportsEditJobSelect.html", function(temp) {
+						var compiledTemplate = Template7.compile(temp);
+						var html = compiledTemplate(resultChild);
+						div.html(html);
+						div.val(result.job);
+					});
+				});		
+
+
+				var Users = window.User.read();
+				Users.then(function(resultChild) {
+					var div = $("#input_user");
+					$.get("templates/ReportsEditUserSelect.html", function(temp) {
+						var compiledTemplate = Template7.compile(temp);
+						var html = compiledTemplate(resultChild);
+						div.html(html);
+						div.val(result.user);
+					});
+				});		
+			});
+		});		
 	});		
+
+
 };
 
 App.prototype.ReportsDetailAction = function(e) {
 	e.preventDefault();
 	var self = this;
 	window.Report.id = mainView.url.split("id=")[1];
-	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
+	window.Report.title = $("#input_job option:selected").text()+" - "+$("#input_user option:selected").text()+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.Report.description = $("#input_description").val();
 	window.Report.points = $("#input_points").val();
 	window.Report.active = $("#input_active").val();
