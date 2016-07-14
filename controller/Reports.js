@@ -10,13 +10,13 @@ App.prototype.ReportsScreen = function() {
 			resultMyself = [];
 			resultTeam = [];
 			for(var i in result){
-				if(result[i].user == App.auth.currentUser.uid){
+				if(result[i].user == window.App.auth.currentUser.uid){
 					result[i].id = i;
 					result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
 					resultMyself.push(result[i]);
 				}
 
-				if(resultUser[App.auth.currentUser.uid].is_editor==1 && result[i].user != App.auth.currentUser.uid && resultUser[App.auth.currentUser.uid].team==resultUser[result[i].user].team){
+				if(resultUser[window.App.auth.currentUser.uid].is_editor==1 && result[i].user != window.App.auth.currentUser.uid && resultUser[window.App.auth.currentUser.uid].team==resultUser[result[i].user].team){
 					result[i].id = i;
 					result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
 					resultTeam.push(result[i]);
@@ -44,7 +44,7 @@ App.prototype.ReportsDetailScreen = function() {
 
 	var div = $("#ReportsDetail");
 
-	var Users = window.User.read(App.auth.currentUser.uid);
+	var Users = window.User.read();
 	Users.then(function(resultUser) {
 		var Reports = window.Report.read(id);
 		Reports.then(function(result) {
@@ -54,7 +54,7 @@ App.prototype.ReportsDetailScreen = function() {
 			if(result.active==0){
 				result.locked = 0;
 			}
-			if(resultUser.is_editor==1){
+			if(resultUser[window.App.auth.currentUser.uid].is_editor==1){
 				result.locked = 0;
 				result.can_validate = 1;
 			}
@@ -83,10 +83,18 @@ App.prototype.ReportsDetailScreen = function() {
 
 				var Users = window.User.read();
 				Users.then(function(resultChild) {
+					var resultMyTeamUsers = [];
+					for(var i in resultChild){
+						if(resultChild[window.App.auth.currentUser.uid].team==resultChild[i].team){
+							resultChild[i].id = i;
+							resultMyTeamUsers.push(resultChild[i]);
+						}
+					}
+
 					var div = $("#input_user");
 					$.get("templates/ReportsEditUserSelect.html", function(temp) {
 						var compiledTemplate = Template7.compile(temp);
-						var html = compiledTemplate(resultChild);
+						var html = compiledTemplate(resultMyTeamUsers);
 						div.html(html);
 						div.val(result.user);
 					});
@@ -143,7 +151,7 @@ App.prototype.ReportsAddAction = function(e) {
 	window.Report.points = $("#input_points").val();
 	window.Report.job = $("#input_job").val();
 	window.Report.active = 0;
-	window.Report.user = App.auth.currentUser.uid;
+	window.Report.user = window.App.auth.currentUser.uid;
 
 	//TAKE PICTURE
 	var ReportPicture = window.PluginCamera.takePicture();
