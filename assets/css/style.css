@@ -27,6 +27,7 @@
 	background:#ffffff !important;
 }
 
+
 tr{
 	background:white;
 	text-align:center;
@@ -117,6 +118,19 @@ td{
 .ranking-img > img{
 	width:35px;
 	min-height:22px;
+}
+
+
+.reportpic-img{
+	margin:0px auto;
+	overflow:hidden;
+	width:100%;
+	height:300px;
+}
+
+.reportpic-img > img,.reportpic-img > a > img{
+	width:100%;
+	min-height:300px;
 }
 
 

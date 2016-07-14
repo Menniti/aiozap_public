@@ -11,7 +11,7 @@ App.prototype.PagesScreen = function() {
 	});		
 };
 
-App.prototype.PagesDetailAction = function() {
+App.prototype.PagesDetailScreen = function() {
 	var div = $("#PagesDetail");
 	var self = this;
 	var id = mainView.url.split("id=")[1];

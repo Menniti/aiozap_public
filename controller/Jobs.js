@@ -11,7 +11,7 @@ App.prototype.JobsScreen = function() {
 	});		
 };
 
-App.prototype.JobsDetailAction = function() {
+App.prototype.JobsDetailScreen = function() {
 	var self = this;
 	var id = mainView.url.split("id=")[1];
 

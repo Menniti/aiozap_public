@@ -11,7 +11,7 @@ App.prototype.TeamsScreen = function() {
 	});		
 };
 
-App.prototype.TeamsDetailAction = function() {
+App.prototype.TeamsDetailScreen = function() {
 	var self = this;
 	var id = mainView.url.split("id=")[1];
 

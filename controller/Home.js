@@ -15,15 +15,15 @@ App.prototype.HomeScreen = function() {
 	});
 
 	myApp.onPageAfterAnimation('JobsDetail', function (page) {
-		self.JobsDetailAction();
+		self.JobsDetailScreen();
 	});
 
 	myApp.onPageAfterAnimation('PagesDetail', function (page) {
-		self.PagesDetailAction();
+		self.PagesDetailScreen();
 	});
 
 	myApp.onPageAfterAnimation('TeamsDetail', function (page) {
-		self.TeamsDetailAction();
+		self.TeamsDetailScreen();
 	});
 
 	myApp.onPageAfterAnimation('Contact', function (page) {
@@ -34,7 +34,7 @@ App.prototype.HomeScreen = function() {
 		self.ReportsScreen();
 	});
 	myApp.onPageAfterAnimation('ReportsDetail', function (page) {
-		self.ReportsDetailAction();
+		self.ReportsDetailScreen();
 	});
 
 	myApp.onPageAfterAnimation('Ranking', function (page) {

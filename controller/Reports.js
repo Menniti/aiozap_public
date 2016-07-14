@@ -23,7 +23,7 @@ App.prototype.ReportsScreen = function() {
 	});		
 };
 
-App.prototype.ReportsDetailAction = function() {
+App.prototype.ReportsDetailScreen = function() {
 	var self = this;
 	var id = mainView.url.split("id=")[1];
 
@@ -32,11 +32,38 @@ App.prototype.ReportsDetailAction = function() {
 	Reports.then(function(result) {
 		console.log(result);
 		$.get("templates/ReportsDetail.html", function(temp) {
+
+			var ReportDetailForm = $("#report-detail-form");
+			ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
+
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
 			div.html(html);
+
+			var Jobs = window.Job.read();
+			Jobs.then(function(resultChild) {
+				var div = $("#input_job");
+				$.get("templates/ReportsEditJobSelect.html", function(temp) {
+					var compiledTemplate = Template7.compile(temp);
+					var html = compiledTemplate(resultChild);
+					div.html(html);
+					div.val(result.job);
+				});
+			});		
+
 		});
 	});		
+};
+
+App.prototype.ReportsDetailAction = function(e) {
+	e.preventDefault();
+	var self = this;
+	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
+	window.Report.description = $("#input_description").val();
+	window.Report.points = $("#input_points").val();
+	window.Report.job = $("#input_job").val();
+	window.Report.active = 0;
+	window.Report.user = App.auth.currentUser.uid;
 
 };
 
@@ -55,7 +82,6 @@ App.prototype.ReportsAddScreen = function() {
 			div.html(html);
 		});
 	});		
-
 };
 
 App.prototype.ReportsAddAction = function(e) {
