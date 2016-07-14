@@ -33,12 +33,12 @@ App.prototype.ReportsDetailScreen = function() {
 		console.log(result);
 		$.get("templates/ReportsDetail.html", function(temp) {
 
-			var ReportDetailForm = $("#report-detail-form");
-			ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
-
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
 			div.html(html);
+
+			var ReportDetailForm = $("#report-detail-form");
+			ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
 
 			var Jobs = window.Job.read();
 			Jobs.then(function(resultChild) {
@@ -51,6 +51,17 @@ App.prototype.ReportsDetailScreen = function() {
 				});
 			});		
 
+
+			var Users = window.User.read();
+			Users.then(function(resultChild) {
+				var div = $("#input_user");
+				$.get("templates/ReportsEditUserSelect.html", function(temp) {
+					var compiledTemplate = Template7.compile(temp);
+					var html = compiledTemplate(resultChild);
+					div.html(html);
+					div.val(result.user);
+				});
+			});		
 		});
 	});		
 };
@@ -58,13 +69,21 @@ App.prototype.ReportsDetailScreen = function() {
 App.prototype.ReportsDetailAction = function(e) {
 	e.preventDefault();
 	var self = this;
+	window.Report.id = mainView.url.split("id=")[1];
 	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.Report.description = $("#input_description").val();
 	window.Report.points = $("#input_points").val();
+	window.Report.active = $("#input_active").val();
 	window.Report.job = $("#input_job").val();
-	window.Report.active = 0;
-	window.Report.user = App.auth.currentUser.uid;
-
+	window.Report.user = $("#input_user").val();
+	var Reports = window.Report.update();
+	Reports.then(function(result) {
+		if(result==true){
+			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
+		}else{
+			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
+		}
+	});		
 };
 
 App.prototype.ReportsAddScreen = function() {

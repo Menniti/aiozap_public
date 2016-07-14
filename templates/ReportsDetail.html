@@ -1,7 +1,7 @@
 		{{#js_compare "this.file"}}
 		<div class="row">
 			<div class="col-100">
-				<div class="reportpic-img"><a class="photo" href="#"><img src="{{file}}" /></a></div>
+				<div class="reportpic-img"><a class="photo" href="#"><img src="{{file}}" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();"  /></a></div>
 			</div>
 		</div>
 		{{/js_compare}}
@@ -43,6 +43,18 @@
 							</div>
 						</div>
 					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Usuário</div>
+								<div class="item-input">
+									<select class="form-control" id="input_user">
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<input type="hidden" id="input_description" value="{{description}}">
 					<!--<li>
 						<div class="item-content">
 							<div class="item-inner">
