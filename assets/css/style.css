@@ -1,4 +1,5 @@
 /*
+*/
 .list-block ul li:nth-child(1){background:#f8f8f8;}
 .list-block ul li:nth-child(2){background:#f3f3f3;}
 .list-block ul li:nth-child(3){background:#eeeeee;}
@@ -14,6 +15,62 @@
 .list-block ul li:nth-child(13){background:#b8b8b8;}
 .list-block ul li:nth-child(14){background:#b3b3b3;}
 
+.bolinha{
+	padding-left:18px;
+	background-image:url('../img/bola.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+
+
+.ranking{
+	padding-left:18px;
+	background-image:url('../img/ranking.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+
+.logo-icon:nth-child(1){
+	padding-left:18px;
+	background-image:url('../img/logo1.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+
+.logo-icon:nth-child(2){
+	padding-left:18px;
+	background-image:url('../img/logo2.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+.logo-icon:nth-child(3){
+	padding-left:18px;
+	background-image:url('../img/logo3.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+.logo-icon:nth-child(4){
+	padding-left:18px;
+	background-image:url('../img/logo4.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+.logo-icon:nth-child(5){
+	padding-left:18px;
+	background-image:url('../img/logo5.png') !important;
+	background-repeat:no-repeat !important;
+	background-position:7px 12px !important;
+	background-size:20px 20px !important;
+}
+
+
+
 .content-block-title{
 	color:#555;
 }
@@ -25,7 +82,7 @@
 .panel{
 	background:#ffffff !important;
 }
-*/
+
 
 tr{
 	background:white;
@@ -35,7 +92,7 @@ tr{
 
 td{
 	padding:10px 0px;
-	width:15vw;
+	width:15%;
 	display:inline-block;
 }
 
@@ -44,7 +101,7 @@ td{
 }
 .button{
 	border:0px;
-	background:#666;
+	background:#999;
 	color:white;
 	height:32px;
 }
@@ -117,6 +174,19 @@ td{
 .ranking-img > img{
 	width:35px;
 	min-height:22px;
+}
+
+
+.reportpic-img{
+	margin:0px auto;
+	overflow:hidden;
+	width:100%;
+	height:250px;
+}
+
+.reportpic-img > img,.reportpic-img > a > img{
+	width:100%;
+	min-height:250px;
 }
 
 
