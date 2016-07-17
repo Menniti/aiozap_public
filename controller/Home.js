@@ -88,8 +88,10 @@ App.prototype.HomeProfile = function(e) {
 App.prototype.SignOutAction = function(e) {
 	var self = this;
 	e.preventDefault();
-	window.User.logout();
-	self.HomeScreen();
+	var Users = window.User.logout();
+	Users.then(function(result) {
+		self.HomeScreen();
+	});		
 };
 
 
