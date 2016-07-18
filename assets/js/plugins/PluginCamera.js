@@ -5,17 +5,24 @@ function PluginCamera() {
 PluginCamera.prototype.takePicture = function(type) {
 	var self = this;
 	var deferred = $.Deferred();
+	return deferred.promise();
+};
+*/
+
+PluginCamera.prototype.takePicture = function(type) {
+	var self = this;
+	var deferred = $.Deferred();
 	var buttons = [
 		{
 			text: 'Tirar foto',
 			onClick: function () {
-				deferred.resolve(self.takePictureAction());
+				navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.CAMERA});
 			}
 		},
 		{
 			text: 'Álbum de fotos',
 			onClick: function () {
-				deferred.resolve(self.takePictureAction("album"));
+				navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM});
 			}
 		},
 		{
@@ -24,18 +31,13 @@ PluginCamera.prototype.takePicture = function(type) {
 		},
 	];
 	myApp.actions(this,buttons);
-	return deferred.promise();
-};
-*/
 
-PluginCamera.prototype.takePicture = function(type) {
-	var self = this;
-	var deferred = $.Deferred();
-	if(type=="album"){
+
+	/*if(type=="album"){
 		navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM});
 	}else{
 		navigator.camera.getPicture(success, error,{quality: 75,targetWidth:800,targetHeight:600,destinationType: Camera.DestinationType.FILE_URI,sourceType: Camera.PictureSourceType.CAMERA});
-	}
+	}*/
 	function success(image) {
 		//console.log(image);
 		//self.cache = JSON.stringify(image);
