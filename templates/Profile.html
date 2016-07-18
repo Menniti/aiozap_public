@@ -1,13 +1,13 @@
 		{{#js_compare "this.file"}}
 			<div class="row">
 				<div class="col-100">
-					<div class="reportpic-img"><a class="photo" href="#"><img src="{{file}}" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();"  /></a></div>
+					<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
 				</div>
 			</div>
 		{{else}}
 			<div class="row">
 				<div class="col-100">
-					<div class="reportpic-img"><a href="#"><img src="assets/img/profile_placeholder.png" /></a></div>
+					<div class="profilepic-img"><img id="BtnProfilePic" src="assets/img/profile_placeholder.png" /></div>
 				</div>
 			</div>
 		{{/js_compare}}
@@ -45,8 +45,21 @@
 							</div>
 						</div>
 					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Tipo</div>
+								<div class="item-input">
+									<select class="form-control" id="input_type">
+										<option value="0" {{#js_compare "this.type==0"}}selected{{/js_compare}}>Convidado</option>
+										<option value="1" {{#js_compare "this.type==1"}}selected{{/js_compare}}>Colaborador CCP</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+
 					<input type="hidden" readonly id="input_is_editor" value="{{is_editor}}">
-					<input type="hidden" readonly id="input_type" value="{{type}}">
 					<li>
 						<div class="item-content">
 							<div class="item-inner">

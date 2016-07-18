@@ -199,6 +199,18 @@ td{
 }
 
 
+.profilepic-img{
+	margin:0px auto;
+	overflow:hidden;
+	width:100%;
+	height:250px;
+}
+
+.profilepic-img > img,.reportpic-img > a > img{
+	width:100%;
+	min-height:250px;
+}
+
 .jobpic-img{
 	border-radius:10px;
 	margin:0px auto;

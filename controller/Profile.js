@@ -13,6 +13,7 @@ App.prototype.ProfileScreen = function() {
 			var ProfileForm = $("#profile-form");
 			ProfileForm.on('submit', self.ProfileAction.bind(self));
 
+			$("#BtnProfilePic").on('click', self.ProfilePicAction.bind(self));
 
 			var Teams = window.Team.read();
 			Teams.then(function(resultChild) {
@@ -48,5 +49,43 @@ App.prototype.ProfileAction = function(e) {
 			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
 		}
 	});		
+};
+
+
+App.prototype.ProfilePicAction = function() {
+	var self = this;
+	//TAKE PICTURE
+	var ProfilePicture = window.PluginCamera.takePicture();
+	ProfilePicture.then(function(resultPic) {
+		window.User.id = window.App.auth.currentUser.uid;
+		window.User.file = resultPic;
+		//UPLOAD PICTURE
+		var UserPic = window.User.uploadFile();
+		$.when(UserPic).then(function(result) {
+			var uploadTask = result;
+			uploadTask.on("state_changed",
+				function(snapshot) {
+					var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					myApp.addNotification({hold:1000,title: 'Upload:',message:progress+'%'});
+				}, function(error) {
+					console.log(error);
+				}, function() {
+					var downloadURL = uploadTask.snapshot.downloadURL;
+					window.User.file = downloadURL;
+					//UPDATE CREATED ENTRY ON DB
+					var UserUpdatePic = window.User.updateFile();
+					UserUpdatePic.then(function(result) {
+						if(result==true){
+							myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
+						}else{
+							myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
+						}
+					});		
+
+				}
+			);
+		});
+
+	});
 };
 
