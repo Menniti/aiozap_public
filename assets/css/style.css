@@ -215,6 +215,7 @@ td{
 	overflow:hidden;
 	width:80px;
 	height:60px;
+	box-shadow:0px 0px 3px #333;
 }
 
 .jobpic-img > img,.jobpic-img > a > img{
