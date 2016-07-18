@@ -12,6 +12,15 @@ App.prototype.HomeScreen = function() {
 		self.PagesScreen();
 		self.JobsScreen();
 		self.TakeJobPicScreen();
+
+		if(self.checkLogin()){
+			$("#SidebarLoggedIn").show();
+			$("#SidebarLoggedOut").hide();
+			self.HomeProfile();
+		}else{
+			$("#SidebarLoggedIn").hide();
+			$("#SidebarLoggedOut").show();
+		}
 	});
 
 	myApp.onPageAfterAnimation('JobsDetail', function (page) {
