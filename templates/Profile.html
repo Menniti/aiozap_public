@@ -1,0 +1,64 @@
+		{{#js_compare "this.file"}}
+			<div class="row">
+				<div class="col-100">
+					<div class="reportpic-img"><a class="photo" href="#"><img src="{{file}}" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();"  /></a></div>
+				</div>
+			</div>
+		{{else}}
+			<div class="row">
+				<div class="col-100">
+					<div class="reportpic-img"><a href="#"><img src="assets/img/profile_placeholder.png" /></a></div>
+				</div>
+			</div>
+		{{/js_compare}}
+		<form id="profile-form">
+			<div class="list-block">
+				<ul>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Nome</div>
+								<div class="item-input">
+									<input type="text" id="input_name" placeholder="Digite seu nome" value={{name}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Telefone</div>
+								<div class="item-input">
+									<input type="text" id="input_phone" placeholder="Digite seu telefone" value={{phone}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Equipe</div>
+								<div class="item-input">
+									<select class="form-control" id="input_team">
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<input type="hidden" readonly id="input_is_editor" value="{{is_editor}}">
+					<input type="hidden" readonly id="input_type" value="{{type}}">
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<input type="submit" class="button" value="Salvar alteração">
+								</div>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</form>
+
+
