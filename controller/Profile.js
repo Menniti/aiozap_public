@@ -77,6 +77,7 @@ App.prototype.ProfilePicAction = function() {
 					UserUpdatePic.then(function(result) {
 						if(result==true){
 							myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
+							self.ProfileScreen();
 						}else{
 							myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
 						}
