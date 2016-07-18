@@ -6,7 +6,7 @@ App.prototype.GalleryScreen = function() {
 		var published=[];
 		var photos=[];		
 		for (var i in result){
-			if(result[i].active==1){
+			if(result[i].active==1 && result[i].file){
 				published.push(result[i]);
 				photos.push(result[i].file);
 			}
