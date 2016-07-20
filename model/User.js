@@ -93,7 +93,7 @@ User.prototype.update = function() {
 		name: name,
 		is_editor: is_editor,
 		team: team,
-		type: type,
+		type: type
 	};
 	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
 		return true;
@@ -101,6 +101,17 @@ User.prototype.update = function() {
 		return false;
 	});	
 };
+
+//PASSWORD RESET
+User.prototype.passwordReset = function() {
+	var email = this.email;
+	return firebase.auth().sendPasswordResetEmail(email).then(function() {
+		return true;
+	}, function(error) {
+		return false;
+	});
+};
+
 
 //UPLOAD FILE
 User.prototype.uploadFile = function() {

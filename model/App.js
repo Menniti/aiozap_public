@@ -4,6 +4,7 @@ function App() {
 	this.msgDeleteDefault = "Deseja realmente apagar?";
 	this.msgErrorDefault = "Ocorreu um erro";
 	this.msgSuccessDefault = "Registro atualizado com sucesso";
+	this.msgPasswordReset = "Solicitação efetuada com sucesso. Confira sua caixa de emails para instruções de como atualizar sua senha";
 	this.msgDefaultTitle = "Aviso";
 	this.msgSuccessForm = "Formulário enviado com sucesso";
 	this.initFirebase();
