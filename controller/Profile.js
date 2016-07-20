@@ -4,7 +4,6 @@ App.prototype.ProfileScreen = function() {
 
 	var Users = window.User.read(window.App.auth.currentUser.uid);
 	Users.then(function(result) {
-		console.log(result);
 		$.get("templates/Profile.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
