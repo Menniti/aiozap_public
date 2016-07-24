@@ -4,7 +4,7 @@ App.prototype.ContactScreen = function() {
 	var divAdmin = $("#ContactScreenAdmin");
 
 	var Admins = window.Admin.read();
-	Admins.then(function(result) {
+	Admins.done(function(result) {
 		var coords=[];
 		for (var i in result){
 			if(result[i].email=="gincanasocial@ccpsa.com.br"){
@@ -20,11 +20,11 @@ App.prototype.ContactScreen = function() {
 
 
 	var Teams = window.Team.read();
-	Teams.then(function(result) {
+	Teams.done(function(result) {
 		console.log(result);
 
 		var Users = window.User.read();
-		Users.then(function(resultUser) {
+		Users.done(function(resultUser) {
 			var coords=[];
 			for (var i in result){
 				for (var j in resultUser){
@@ -48,7 +48,7 @@ App.prototype.ContactScreen = function() {
 
 
 	/*var Users = window.User.read();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		var coords=[];
 		for (var i in result){
 			if(result[i].is_editor==1){

@@ -10,7 +10,7 @@ function Feed() {
 Feed.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		created: new Date().getTime(),
@@ -43,7 +43,7 @@ Feed.prototype.read = function(id) {
 Feed.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		description: description

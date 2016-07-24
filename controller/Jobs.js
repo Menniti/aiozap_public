@@ -2,7 +2,7 @@ App.prototype.JobsScreen = function() {
 	var div = $("#jobsScreen");
 	var self = this;
 	var Jobs = window.Job.read();
-	Jobs.then(function(result) {
+	Jobs.done(function(result) {
 		$.get("templates/Jobs.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -17,7 +17,7 @@ App.prototype.JobsDetailScreen = function() {
 
 	var div = $("#JobsDetail");
 	var Jobs = window.Job.read(id);
-	Jobs.then(function(result) {
+	Jobs.done(function(result) {
 		result.start_date = moment(result.start_date).format('DD/MM/YY');
 		result.end_date = moment(result.end_date).format('DD/MM/YY');
 		$.get("templates/JobsDetail.html", function(temp) {
@@ -29,7 +29,7 @@ App.prototype.JobsDetailScreen = function() {
 
 	var divPhotos = $("#JobsDetailPhotos");
 	var JobPics = window.JobPic.read();
-	JobPics.then(function(result) {
+	JobPics.done(function(result) {
 		var published=[];
 		var photos=[];		
 		for (var i in result){

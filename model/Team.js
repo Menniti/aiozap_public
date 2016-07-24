@@ -5,13 +5,14 @@ function Team() {
 	this.title;
 	this.color;
 	this.description;
+	this.company;
 }
 
 //CADASTRO
 Team.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		created: new Date().getTime(),
@@ -45,10 +46,12 @@ Team.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
 	var color = this.color;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
+	var company = this.company;
 	var inputData = {
 		title: title,
 		color: color,
+		company: company,
 		description: description
 	};
 	return firebase.database().ref('teams/'+id).update(inputData).then(function(result) {

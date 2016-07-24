@@ -2,7 +2,7 @@ App.prototype.TeamsScreen = function() {
 	var div = $("#teamsScreen");
 	var self = this;
 	var Teams = window.Team.read();
-	Teams.then(function(result) {
+	Teams.done(function(result) {
 		$.get("templates/Teams.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -17,7 +17,7 @@ App.prototype.TeamsDetailScreen = function() {
 
 	var div = $("#TeamsDetail");
 	var Teams = window.Team.read(id);
-	Teams.then(function(result) {
+	Teams.done(function(result) {
 		$.get("templates/TeamsDetail.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -27,7 +27,7 @@ App.prototype.TeamsDetailScreen = function() {
 
 	var divEditors = $("#TeamsDetailEditors");
 	var Users = window.User.read();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		var editors=[];
 		for (var i in result){
 			if(result[i].is_editor==1 && result[i].team==id){

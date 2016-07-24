@@ -14,7 +14,7 @@ Job.prototype.create = function() {
 	var title = this.title;
 	var start_date = this.start_date;
 	var end_date = this.end_date;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		created: new Date().getTime(),
@@ -51,7 +51,7 @@ Job.prototype.update = function() {
 	var title = this.title;
 	var start_date = this.start_date;
 	var end_date = this.end_date;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		description: description,

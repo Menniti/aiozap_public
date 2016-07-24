@@ -10,7 +10,7 @@ function Page() {
 Page.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		created: new Date().getTime(),
@@ -43,7 +43,7 @@ Page.prototype.read = function(id) {
 Page.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		description: description

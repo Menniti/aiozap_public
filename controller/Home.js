@@ -85,7 +85,7 @@ App.prototype.HomeProfile = function(e) {
 	var div = $("#HomeProfile");
 	var self = this;
 	var Users = window.User.read(App.auth.currentUser.uid);
-	Users.then(function(result) {
+	Users.done(function(result) {
 		$.get("templates/HomeProfile.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -102,7 +102,7 @@ App.prototype.SignOutAction = function(e) {
 	var self = this;
 	e.preventDefault();
 	var Users = window.User.logout();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		self.HomeScreen();
 	});		
 };

@@ -1,5 +1,8 @@
 				{{#js_compare "this.file"}}
-					<div style="background-image:url({{file}})" class="content-image"></div>
+					<!--<div style="background-image:url({{file}})" class="content-image"></div>-->
+					<div class="card-img" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();">
+						<img src="{{file}}" />
+					</div>
 				{{/js_compare}}
 				<div class="content-block-title" >
 					{{title}}

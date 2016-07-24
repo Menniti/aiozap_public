@@ -3,16 +3,16 @@ App.prototype.RankingScreen = function() {
 	var div = $("#RankingScreen");
 
 	var Users = window.User.read();
-	Users.then(function(resultUsers) {
+	Users.done(function(resultUsers) {
 
 		var Teams = window.Team.read();
-		Teams.then(function(resultTeams) {
+		Teams.done(function(resultTeams) {
 
 			var Jobs = window.Job.read();
-			Jobs.then(function(resultJobs) {
+			Jobs.done(function(resultJobs) {
 
 				var Reports = window.Report.read();
-				Reports.then(function(resultReports) {
+				Reports.done(function(resultReports) {
 
 					var RankingJobs = [];
 						RankingJobs.points = {};
@@ -26,13 +26,19 @@ App.prototype.RankingScreen = function() {
 							RankingJobs.points[i][j] = 0;
 						}
 					}
-				
+
 					for(var i in resultReports){
-						if(resultReports[i].active==1 && resultUsers[resultReports[i].user].team && resultReports[i].points>0){
-							var rankingJob = resultJobs[resultReports[i].job].title;
-							var rankingTeam = resultTeams[resultUsers[resultReports[i].user].team].title;
-							var rankingPoints = resultReports[i].points;
-							RankingJobs.points[resultReports[i].job][resultUsers[resultReports[i].user].team]+=parseInt(resultReports[i].points);
+						if(resultReports[i].hasOwnProperty("user")){
+							if(resultUsers.hasOwnProperty(resultReports[i].user)){
+								if(resultUsers[resultReports[i].user].hasOwnProperty("team")){
+									if(resultReports[i].active==1 && resultUsers[resultReports[i].user].team && resultReports[i].points>0){
+										var rankingJob = resultJobs[resultReports[i].job].title;
+										var rankingTeam = resultTeams[resultUsers[resultReports[i].user].team].title;
+										var rankingPoints = resultReports[i].points;
+										RankingJobs.points[resultReports[i].job][resultUsers[resultReports[i].user].team]+=parseInt(resultReports[i].points);
+									}
+								}
+							}
 						}
 					}
 

@@ -15,7 +15,7 @@ App.prototype.LoginAction = function(e) {
 	window.User.email = $("#input_email").val();
 	window.User.password = $("#input_password").val();
 	var Users = window.User.login();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		$("#btn_login").attr("disabled",false);
 		console.log(result);
 		if(result==true){
@@ -33,7 +33,7 @@ App.prototype.RegisterAction = function(e) {
 	window.User.email = $("#input_register_email").val();
 	window.User.password = $("#input_register_password").val();
 	var Users = window.User.create();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		$("#btn_register").attr("disabled",false);
 		console.log(result);
 		if(result==true){
@@ -50,7 +50,7 @@ App.prototype.PasswordResetAction = function(e) {
 	e.preventDefault();
 	window.User.email = $("#input_email").val();
 	var Users = window.User.passwordReset();
-	Users.then(function(result) {
+	Users.done(function(result) {
 		$("#btn_password_reset").attr("disabled",false);
 		console.log(result);
 		if(result==true){

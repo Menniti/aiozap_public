@@ -59,7 +59,7 @@ Report.prototype.update = function() {
 	var active = this.active;
 	var user = this.user;
 	var job = this.job;
-	var description = this.description;
+	var description = this.description.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		active: active,

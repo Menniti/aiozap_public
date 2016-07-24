@@ -3,9 +3,9 @@ App.prototype.ReportsScreen = function() {
 	var self = this;
 
 	var Users = window.User.read();
-	Users.then(function(resultUser) {
+	Users.done(function(resultUser) {
 		var Reports = window.Report.read();
-		Reports.then(function(result) {
+		Reports.done(function(result) {
 			resultRev = {};
 			resultMyself = [];
 			resultTeam = [];
@@ -16,11 +16,17 @@ App.prototype.ReportsScreen = function() {
 					resultMyself.push(result[i]);
 				}
 
-				if(resultUser[window.App.auth.currentUser.uid].is_editor==1 && result[i].user != window.App.auth.currentUser.uid && resultUser[window.App.auth.currentUser.uid].team==resultUser[result[i].user].team){
-					result[i].id = i;
-					result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
-					resultTeam.push(result[i]);
-				}
+				if(result[i].hasOwnProperty("user")){
+					if(resultUser.hasOwnProperty(result[i].user)){
+						if(resultUser[result[i].user].hasOwnProperty("team")){
+							if(resultUser[window.App.auth.currentUser.uid].is_editor==1 && result[i].user != window.App.auth.currentUser.uid && resultUser[window.App.auth.currentUser.uid].team==resultUser[result[i].user].team){
+								result[i].id = i;
+								result[i].created = moment(result[i].created).format('DD/MM/YY - HH:mm');
+								resultTeam.push(result[i]);
+							}
+						}
+					}
+				}				
 			}
 			resultMyself.reverse();
 			resultTeam.reverse();
@@ -45,9 +51,9 @@ App.prototype.ReportsDetailScreen = function() {
 	var div = $("#ReportsDetail");
 
 	var Users = window.User.read();
-	Users.then(function(resultUser) {
+	Users.done(function(resultUser) {
 		var Reports = window.Report.read(id);
-		Reports.then(function(result) {
+		Reports.done(function(result) {
 			result.locked = 1;
 			result.can_validate = 0;
 		
@@ -59,6 +65,7 @@ App.prototype.ReportsDetailScreen = function() {
 				result.can_validate = 1;
 			}
 
+			result.description = result.description.replace("<p>","").replace("</p>","");
 
 			$.get("templates/ReportsDetail.html", function(temp) {
 
@@ -70,7 +77,7 @@ App.prototype.ReportsDetailScreen = function() {
 				ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
 
 				var Jobs = window.Job.read();
-				Jobs.then(function(resultChild) {
+				Jobs.done(function(resultChild) {
 					var div = $("#input_job");
 					$.get("templates/ReportsEditJobSelect.html", function(temp) {
 						var compiledTemplate = Template7.compile(temp);
@@ -82,7 +89,7 @@ App.prototype.ReportsDetailScreen = function() {
 
 
 				var Users = window.User.read();
-				Users.then(function(resultChild) {
+				Users.done(function(resultChild) {
 					var resultMyTeamUsers = [];
 					for(var i in resultChild){
 						if(resultChild[window.App.auth.currentUser.uid].team==resultChild[i].team){
@@ -118,7 +125,7 @@ App.prototype.ReportsDetailAction = function(e) {
 	window.Report.user = $("#input_user").val();
 	var Reports = window.Report.update();
 	Reports.then(function(result) {
-		if(result==true){
+		if(result!=false){
 			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 		}else{
 			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
@@ -132,8 +139,10 @@ App.prototype.ReportsAddScreen = function() {
 	var ReportAddForm = $("#report-add-form");
 	ReportAddForm.on('submit', self.ReportsAddAction.bind(self));
 
+	 $("#report-addnopic").on('click', self.ReportsAddNoPicAction.bind(self));
+
 	var Jobs = window.Job.read();
-	Jobs.then(function(resultChild) {
+	Jobs.done(function(resultChild) {
 		var div = $("#input_job");
 		$.get("templates/ReportsEditJobSelect.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
@@ -180,7 +189,8 @@ App.prototype.ReportsAddAction = function(e) {
 							//UPDATE CREATED ENTRY ON DB
 							var Reports = window.Report.updateFile();
 							Reports.then(function(result) {
-								if(result==true){
+								if(result!=false){
+									mainView.back();
 									myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 								}else{
 									myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
@@ -197,5 +207,27 @@ App.prototype.ReportsAddAction = function(e) {
 			}
 		});		
 	});
+
+};
+
+App.prototype.ReportsAddNoPicAction = function(e) {
+	e.preventDefault();
+	var self = this;
+	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
+	window.Report.description = $("#input_description").val();
+	window.Report.points = $("#input_points").val();
+	window.Report.job = $("#input_job").val();
+	window.Report.active = 0;
+	window.Report.user = window.App.auth.currentUser.uid;
+
+	var Report = window.Report.create();
+	Report.then(function(result) {
+		if(result!=false){
+			mainView.back();
+			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
+		}else{
+			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
+		}
+	});		
 
 };

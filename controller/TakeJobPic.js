@@ -5,7 +5,7 @@ App.prototype.TakeJobPicScreen = function() {
 App.prototype.TakeJobPicAction = function() {
 	var self = this;
 	var JobsActionSheet = window.Job.read();
-	JobsActionSheet.then(function(result) {
+	JobsActionSheet.done(function(result) {
 		var buttons = [];
 		for(var i in result){
 			var button = {};

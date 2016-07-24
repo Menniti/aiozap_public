@@ -1,8 +1,16 @@
-					{{#if this}}
+					<!-- Default pull to refresh layer-->
+					<div class="pull-to-refresh-layer">
+						<div class="preloader"></div>
+						<div class="pull-to-refresh-arrow"></div>
+					</div>
+ 					{{#if this}}
 						{{#each this}}
 							<div class="card demo-card-header-pic">
 								{{#if file}}
-									<div style="background-image:url({{file}})" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();" valign="bottom" class="card-header color-white no-border"></div>
+									<!--<div style="background-image:url({{file}})" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();" valign="bottom" class="card-header color-white no-border"></div>-->
+									<div class="card-img" onclick="myApp.photoBrowser({photos:['{{file}}']}).open();">
+										<img src="{{file}}" />
+									</div>
 								{{/if}}
 								<div class="card-content">
 									<div class="card-content-inner">

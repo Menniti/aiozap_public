@@ -3,7 +3,7 @@ App.prototype.ProfileScreen = function() {
 	var self = this;
 
 	var Users = window.User.read(window.App.auth.currentUser.uid);
-	Users.then(function(result) {
+	Users.done(function(result) {
 		$.get("templates/Profile.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -15,7 +15,7 @@ App.prototype.ProfileScreen = function() {
 			$("#BtnProfilePic").on('click', self.ProfilePicAction.bind(self));
 
 			var Teams = window.Team.read();
-			Teams.then(function(resultChild) {
+			Teams.done(function(resultChild) {
 				var div = $("#input_team");
 				$.get("templates/ProfileTeamSelect.html", function(temp) {
 					var compiledTemplate = Template7.compile(temp);
@@ -42,7 +42,7 @@ App.prototype.ProfileAction = function(e) {
 	window.User.type = $("#input_type").val();
 	var Profile = window.User.update();
 	Profile.then(function(result) {
-		if(result==true){
+		if(result!=false){
 			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 		}else{
 			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
@@ -74,7 +74,7 @@ App.prototype.ProfilePicAction = function() {
 					//UPDATE CREATED ENTRY ON DB
 					var UserUpdatePic = window.User.updateFile();
 					UserUpdatePic.then(function(result) {
-						if(result==true){
+						if(result!=false){
 							myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 							self.ProfileScreen();
 						}else{

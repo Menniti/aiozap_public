@@ -87,6 +87,17 @@ Admin.prototype.update = function() {
 	});	
 };
 
+//PASSWORD RESET
+Admin.prototype.resetPassword = function() {
+	var email = this.email;
+	return firebase.auth().sendPasswordResetEmail(email).then(function() {
+		return true;
+	}, function(error) {
+		return false;
+	});
+};
+
+
 //UPLOAD FILE
 Admin.prototype.uploadFile = function() {
 	var id = this.id;

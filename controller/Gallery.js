@@ -2,7 +2,7 @@ App.prototype.GalleryScreen = function() {
 	var div = $("#GalleryScreen");
 	var self = this;
 	var JobPics = window.JobPic.read();
-	JobPics.then(function(result) {
+	JobPics.done(function(result) {
 		var published=[];
 		var photos=[];		
 		for (var i in result){
@@ -16,12 +16,12 @@ App.prototype.GalleryScreen = function() {
 			var html = compiledTemplate(published);
 			div.html(html);
 
-			var photoBrowser = myApp.photoBrowser({
+			/*var photoBrowser = myApp.photoBrowser({
 				photos : photos
 			});
 			$('.photo').on('click', function () {
 				photoBrowser.open();
-			});
+			});*/
 
 		});
 	});
