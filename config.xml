@@ -13,7 +13,6 @@
 		Gincana Social Força em Ação
 	</author>
 
-<!--
 	<icon src="icons/android.png" />
 	<icon src="icons/iphone57.png" gap:platform="ios" width="57" height="57" />
 	<icon src="icons/iphone60.png" gap:platform="ios" width="60" height="60" />
@@ -25,9 +24,8 @@
 	<gap:splash src="icons/splash.png"/>
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="320" height="480" />
 	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
--->
 
-
+	<!--
 	<platform name="android">
 		<preference name="SplashScreen" value="screen" />
 		<preference name="SplashScreenDelay" value="1000" />
@@ -75,7 +73,7 @@
 		<splash height="1280" src="res/screen/wp8/SplashScreenImage.png" width="768" />
 		<icon height="99" src="res/icon/wp8/ApplicationIcon.png" width="99" />
 	</platform>
-
+	-->
 
 
 
