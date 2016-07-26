@@ -87,7 +87,7 @@ App.prototype.HomeProfile = function(e) {
 	var div = $("#HomeProfile");
 	var self = this;
 	var Users = window.User.read(App.auth.currentUser.uid);
-	Users.done(function(result) {
+	Users.then(function(result) {
 		$.get("templates/HomeProfile.html", function(temp) {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
@@ -95,7 +95,9 @@ App.prototype.HomeProfile = function(e) {
 
 			$("#SidebarBtnLogout").on('click', self.SignOutAction.bind(self));
 			$("#SidebarBtnTakeJobPic").on('click', self.TakeJobPicAction.bind(self));
-
+			if(result==null){
+				$("#btn-teampick").hide();
+			}
 		});
 	});		
 };

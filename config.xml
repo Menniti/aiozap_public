@@ -21,12 +21,12 @@
 	<icon src="icons/iphone120.png" gap:platform="ios" width="120" height="120" />
 	<icon src="icons/iphone152.png" gap:platform="ios" width="152" height="152" />
 
-	<gap:splash src="icons/splash.png"/>
+	<!--<gap:splash src="icons/splash.png"/>-->
 
-	<!--
 	<platform name="android">
 		<preference name="SplashScreen" value="screen" />
 		<preference name="SplashScreenDelay" value="1000" />
+		<preference name="SplashMaintainAspectRatio" value="true" />
 		<splash density="land-hdpi" src="res/screen/android/drawable-land-hdpi.png" />
 		<splash density="land-ldpi" src="res/screen/android/drawable-land-ldpi.png" />
 		<splash density="land-mdpi" src="res/screen/android/drawable-land-mdpi.png" />
@@ -71,11 +71,13 @@
 		<splash height="1280" src="res/screen/wp8/SplashScreenImage.png" width="768" />
 		<icon height="99" src="res/icon/wp8/ApplicationIcon.png" width="99" />
 	</platform>
-	-->
 
 
 	<!-- ACCESS ORIGIN -->
 	<access origin="*" />
+
+	<!-- SPLASH -->
+	<plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
 
 	<!-- Device -->
 	<gap:plugin name="org.apache.cordova.device" />

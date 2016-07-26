@@ -116,6 +116,7 @@ App.prototype.ReportsDetailScreen = function() {
 App.prototype.ReportsDetailAction = function(e) {
 	e.preventDefault();
 	var self = this;
+	$("#btn_save_report").attr("disabled",true);
 	window.Report.id = mainView.url.split("id=")[1];
 	window.Report.title = $("#input_job option:selected").text()+" - "+$("#input_user option:selected").text()+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.Report.description = $("#input_description").val();
@@ -126,6 +127,7 @@ App.prototype.ReportsDetailAction = function(e) {
 	var Reports = window.Report.update();
 	Reports.then(function(result) {
 		if(result!=false){
+			$("#btn_save_report").attr("disabled",false);
 			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 		}else{
 			myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
@@ -155,6 +157,9 @@ App.prototype.ReportsAddScreen = function() {
 App.prototype.ReportsAddAction = function(e) {
 	e.preventDefault();
 	var self = this;
+	$("#report-add").attr("disabled",false);
+	$("#report-addnopic").attr("disabled",false);
+
 	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.Report.description = $("#input_description").val();
 	window.Report.points = $("#input_points").val();
@@ -190,6 +195,8 @@ App.prototype.ReportsAddAction = function(e) {
 							var Reports = window.Report.updateFile();
 							Reports.then(function(result) {
 								if(result!=false){
+									$("#report-add").attr("disabled",false);
+									$("#report-addnopic").attr("disabled",false);
 									mainView.back();
 									myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 								}else{
@@ -213,6 +220,9 @@ App.prototype.ReportsAddAction = function(e) {
 App.prototype.ReportsAddNoPicAction = function(e) {
 	e.preventDefault();
 	var self = this;
+	$("#report-add").attr("disabled",true);
+	$("#report-addnopic").attr("disabled",true);
+
 	window.Report.title = $("#input_job option:selected").text()+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.Report.description = $("#input_description").val();
 	window.Report.points = $("#input_points").val();
@@ -223,6 +233,8 @@ App.prototype.ReportsAddNoPicAction = function(e) {
 	var Report = window.Report.create();
 	Report.then(function(result) {
 		if(result!=false){
+			$("#report-add").attr("disabled",false);
+			$("#report-addnopic").attr("disabled",false);
 			mainView.back();
 			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 		}else{

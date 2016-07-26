@@ -15,10 +15,10 @@ App.prototype.LoginAction = function(e) {
 	window.User.email = $("#input_email").val();
 	window.User.password = $("#input_password").val();
 	var Users = window.User.login();
-	Users.done(function(result) {
+	Users.then(function(result) {
 		$("#btn_login").attr("disabled",false);
 		console.log(result);
-		if(result!=false){
+		if(result==true){
 			mainView.back();
 		}else{
 			myApp.alert(self.msgErrors[result.code],self.msgDefaultTitle);
@@ -33,10 +33,10 @@ App.prototype.RegisterAction = function(e) {
 	window.User.email = $("#input_register_email").val();
 	window.User.password = $("#input_register_password").val();
 	var Users = window.User.create();
-	Users.done(function(result) {
+	Users.then(function(result) {
 		$("#btn_register").attr("disabled",false);
 		console.log(result);
-		if(result!=false){
+		if(result==true){
 			mainView.back();
 		}else{
 			myApp.alert(self.msgErrors[result.code],self.msgDefaultTitle);
@@ -53,7 +53,7 @@ App.prototype.PasswordResetAction = function(e) {
 	Users.then(function(result) {
 		$("#btn_password_reset").attr("disabled",false);
 		console.log(result);
-		if(result!=false){
+		if(result==true){
 			mainView.back();
 			myApp.alert(self.msgPasswordReset,self.msgDefaultTitle);
 		}else{
