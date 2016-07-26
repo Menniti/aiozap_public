@@ -10,19 +10,20 @@
 			<div class="list-block">
 				<ul>
 					{{#js_compare "this.can_validate==1"}}
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
-								<div class="item-title label">Validado?</div>
-								<div class="item-input">
-									<select class="form-control" id="input_active">
-										<option value="0" {{#js_compare "this.active==0"}}selected{{/js_compare}}>Não</option>
-										<option value="1" {{#js_compare "this.active==1"}}selected{{/js_compare}}>Sim</option>
-									</select>
+						<!--<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">Validado?</div>
+									<div class="item-input">
+										<select class="form-control" id="input_active">
+											<option value="0" {{#js_compare "this.active==0"}}selected{{/js_compare}}>Não</option>
+											<option value="1" {{#js_compare "this.active==1"}}selected{{/js_compare}}>Sim</option>
+										</select>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
+						</li>-->
+						<input type="hidden" id="input_active" value="{{active}}">
 					{{else}}
 						<input type="hidden" id="input_active" value="{{active}}">
 					{{/js_compare}}

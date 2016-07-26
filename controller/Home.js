@@ -13,6 +13,8 @@ App.prototype.HomeScreen = function() {
 		self.JobsScreen();
 		self.TakeJobPicScreen();
 
+		myApp.openPanel('right');
+
 		if(self.checkLogin()){
 			$("#SidebarLoggedIn").show();
 			$("#SidebarLoggedOut").hide();

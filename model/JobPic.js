@@ -21,7 +21,7 @@ JobPic.prototype.create = function() {
 		user: user,
 		active: active,
 		created: new Date().getTime(),
-		active: 1,
+		active: 0,
 	};
 	var newKey = firebase.database().ref().child('jobpics').push().key;
 	return firebase.database().ref('jobpics/'+newKey).set(inputData).then(function(result) {

@@ -94,6 +94,9 @@
 		<preference name="StatusBarBackgroundColor" value="#000000"/>
 	</gap:plugin>
 
+	<!--In App Browser-->
+	<plugin name="org.li8.inappbrowser" spec="0.1" source="pgb" />
+
 	<!-- Custom Preferences-->
 	<preference name="phonegap-version" value="3.7.0" />    
 	<!--<preference name="phonegap-version" value="3.5.0" />-->
