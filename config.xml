@@ -21,31 +21,7 @@
 	<icon src="icons/iphone120.png" gap:platform="ios" width="120" height="120" />
 	<icon src="icons/iphone152.png" gap:platform="ios" width="152" height="152" />
 
-	<!--
 	<gap:splash src="icons/splash.png"/>
-	<gap:splash gap:platform="ios" src="icons/splash.png" width="320" height="480" />
-	<gap:splash gap:platform="ios" src="icons/splash.png" width="640" height="1136" />
-	-->
-
-	<!--<gap:splash src="icons/splash.png"/>-->
-	<gap:splash platform="android" density="land-hdpi" src="res/screen/android/drawable-land-hdpi.png" />
-	<gap:splash platform="android" density="land-ldpi" src="res/screen/android/drawable-land-ldpi.png" />
-	<gap:splash platform="android" density="land-mdpi" src="res/screen/android/drawable-land-mdpi.png" />
-	<gap:splash platform="android" density="land-xhdpi" src="res/screen/android/drawable-land-xhdpi.png" />
-	<gap:splash platform="android" density="port-hdpi" src="res/screen/android/drawable-port-hdpi.png" />
-	<gap:splash platform="android" density="port-ldpi" src="res/screen/android/drawable-port-ldpi.png" />
-	<gap:splash platform="android" density="port-mdpi" src="res/screen/android/drawable-port-mdpi.png" />
-	<gap:splash platform="android" density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi.png" />
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
-	<gap:splash gap:platform="ios" src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/>
 
 	<!--
 	<platform name="android">
