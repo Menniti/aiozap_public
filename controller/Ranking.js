@@ -14,6 +14,7 @@ App.prototype.RankingScreen = function() {
 				var Reports = window.Report.read();
 				Reports.done(function(resultReports) {
 
+					var RankingTeams = [];
 					var RankingJobs = [];
 						RankingJobs.points = {};
 						RankingJobs.teams = resultTeams;
@@ -36,13 +37,25 @@ App.prototype.RankingScreen = function() {
 										var rankingTeam = resultTeams[resultUsers[resultReports[i].user].team].title;
 										var rankingPoints = resultReports[i].points;
 										RankingJobs.points[resultReports[i].job][resultUsers[resultReports[i].user].team]+=parseInt(resultReports[i].points);
+										if(!RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]){
+											RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]=0;
+										}
+										RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]+=parseInt(resultReports[i].points);
 									}
 								}
 							}
 						}
 					}
 
+					RankingJobs.ranking = [];
+					for(var i in RankingTeams){
+						var obj = {};
+						obj.title = i;
+						obj.value = RankingTeams[i];
+						RankingJobs.ranking.push(obj);
+					}
 					console.log(RankingJobs);
+					RankingJobs.ranking = RankingJobs.ranking.sort(compare).reverse();
 
 					$.get("templates/Ranking.html", function(temp) {
 						var compiledTemplate = Template7.compile(temp);
@@ -59,3 +72,12 @@ App.prototype.RankingScreen = function() {
 
 
 };
+
+
+function compare(a,b) {
+	if (a.value < b.value)
+		return -1;
+	if (a.value > b.value)
+		return 1;
+	return 0;
+}
