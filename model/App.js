@@ -3,6 +3,7 @@ function App() {
 	this.body = $('#body_template');
 	this.msgDeleteDefault = "Deseja realmente apagar?";
 	this.msgErrorDefault = "Ocorreu um erro";
+	this.msgErrorFieldsDefault = "Preencha todos os campos";
 	this.msgSuccessDefault = "Registro atualizado com sucesso";
 	this.msgPasswordReset = "Solicitação efetuada com sucesso. Confira sua caixa de emails para instruções de como atualizar sua senha";
 	this.msgDefaultTitle = "Aviso";
