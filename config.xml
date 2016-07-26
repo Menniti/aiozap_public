@@ -41,6 +41,7 @@
 		<icon density="xhdpi" src="res/icon/android/drawable-xhdpi.png" />
 	</platform>
 	<platform name="ios">
+		<preference name="ShowSplashScreenSpinner" value="false"/>
 		<splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
 		<splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
 		<splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
