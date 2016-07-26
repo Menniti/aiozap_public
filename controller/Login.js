@@ -66,7 +66,7 @@ App.prototype.PasswordResetAction = function(e) {
 				mainView.back();
 				myApp.alert(self.msgPasswordReset,self.msgDefaultTitle);
 			}else{
-				myApp.alert(self.msgErrors[result.code],self.msgDefaultTitle);
+				myApp.alert(self.msgErrorUnrecognizedEmailDefault,self.msgDefaultTitle);
 			}
 		})
 	}else{
