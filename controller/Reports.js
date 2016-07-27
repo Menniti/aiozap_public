@@ -197,6 +197,7 @@ App.prototype.ReportsAddAction = function(e) {
 								if(result!=false){
 									$("#report-add").attr("disabled",false);
 									$("#report-addnopic").attr("disabled",false);
+									myApp.closeModal();
 									mainView.back();
 									myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 								}else{
@@ -235,6 +236,7 @@ App.prototype.ReportsAddNoPicAction = function(e) {
 		if(result!=false){
 			$("#report-add").attr("disabled",false);
 			$("#report-addnopic").attr("disabled",false);
+			myApp.closeModal();
 			mainView.back();
 			myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 		}else{
