@@ -37,10 +37,10 @@ App.prototype.RankingScreen = function() {
 										var rankingTeam = resultTeams[resultUsers[resultReports[i].user].team].title;
 										var rankingPoints = resultReports[i].points;
 										RankingJobs.points[resultReports[i].job][resultUsers[resultReports[i].user].team]+=parseInt(resultReports[i].points);
-										if(!RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]){
-											RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]=0;
+										if(!RankingTeams[resultUsers[resultReports[i].user].team]){
+											RankingTeams[resultUsers[resultReports[i].user].team]=0;
 										}
-										RankingTeams[resultTeams[resultUsers[resultReports[i].user].team].title]+=parseInt(resultReports[i].points);
+										RankingTeams[resultUsers[resultReports[i].user].team]+=parseInt(resultReports[i].points);
 									}
 								}
 							}
@@ -50,7 +50,9 @@ App.prototype.RankingScreen = function() {
 					RankingJobs.ranking = [];
 					for(var i in RankingTeams){
 						var obj = {};
-						obj.title = i;
+						obj.title = resultTeams[i].title;
+						obj.color = resultTeams[i].color;
+						obj.file = resultTeams[i].file;
 						obj.value = RankingTeams[i];
 						RankingJobs.ranking.push(obj);
 					}
