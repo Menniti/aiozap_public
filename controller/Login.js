@@ -11,8 +11,8 @@ App.prototype.LoginScreen = function() {
 App.prototype.LoginAction = function(e) {
 	var self = this;
 	e.preventDefault();
+	$("#btn_login").attr("disabled",true);
 	if($("#input_email").val().length>0 && $("#input_password").val().length>0){
-		$("#btn_login").attr("disabled",true);
 		window.User.email = $("#input_email").val();
 		window.User.password = $("#input_password").val();
 		var Users = window.User.login();
@@ -26,6 +26,7 @@ App.prototype.LoginAction = function(e) {
 			}
 		})
 	}else{
+		$("#btn_login").attr("disabled",false);
 		myApp.alert(self.msgErrorFieldsDefault,self.msgDefaultTitle);
 	}
 };
@@ -33,8 +34,8 @@ App.prototype.LoginAction = function(e) {
 App.prototype.RegisterAction = function(e) {
 	var self = this;
 	e.preventDefault();
+	$("#btn_register").attr("disabled",true);
 	if($("#input_register_email").val().length>0 && $("#input_register_password").val().length>0){
-		$("#btn_register").attr("disabled",true);
 		window.User.email = $("#input_register_email").val();
 		window.User.password = $("#input_register_password").val();
 		var Users = window.User.create();
@@ -48,6 +49,7 @@ App.prototype.RegisterAction = function(e) {
 			}
 		})
 	}else{
+		$("#btn_register").attr("disabled",false);
 		myApp.alert(self.msgErrorFieldsDefault,self.msgDefaultTitle);
 	}
 };
@@ -55,6 +57,7 @@ App.prototype.RegisterAction = function(e) {
 App.prototype.PasswordResetAction = function(e) {
 	var self = this;
 	e.preventDefault();
+	$("#btn_password_reset").attr("disabled",true);
 	if($("#input_recover_email").val().length>0){
 		$("#btn_password_reset").attr("disabled",true);
 		window.User.email = $("#input_recover_email").val();
@@ -70,6 +73,7 @@ App.prototype.PasswordResetAction = function(e) {
 			}
 		})
 	}else{
+		$("#btn_password_reset").attr("disabled",false);
 		myApp.alert(self.msgErrorFieldsDefault,self.msgDefaultTitle);
 	}
 };
