@@ -58,6 +58,11 @@ App.prototype.RankingScreen = function() {
 					}
 					console.log(RankingJobs);
 					RankingJobs.ranking = RankingJobs.ranking.sort(compare).reverse();
+					var counter=0;
+					for(var i in RankingJobs.ranking){
+						counter++;
+						RankingJobs.ranking[i].position = counter;
+					}
 
 					$.get("templates/Ranking.html", function(temp) {
 						var compiledTemplate = Template7.compile(temp);

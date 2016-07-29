@@ -13,7 +13,6 @@ App.prototype.TakeJobPicAction = function() {
 			button.i = i;
 			button.onClick = self.TakeJobPicClosure;
 			buttons.push(button);
-			console.log(buttons);
 		}
 		var button = {};
 			button.text = "Cancelar";

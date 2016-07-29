@@ -10,9 +10,9 @@ App.prototype.ProfileScreen = function() {
 			div.html(html);
 
 			var ProfileForm = $("#profile-form");
-			ProfileForm.on('submit', self.ProfileAction.bind(self));
+			ProfileForm.unbind('submit').on('submit', self.ProfileAction.bind(self));
 
-			$("#BtnProfilePic").on('click', self.ProfilePicAction.bind(self));
+			$("#BtnProfilePic").unbind('click').on('click', self.ProfilePicAction.bind(self));
 
 			var Teams = window.Team.read();
 			Teams.done(function(resultChild) {

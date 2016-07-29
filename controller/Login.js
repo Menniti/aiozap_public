@@ -3,9 +3,9 @@ App.prototype.LoginScreen = function() {
 	var LoginForm = $("#login-form");
 	var RegisterForm = $("#register-form");
 	var PasswordResetForm = $("#password-reset-form");
-	LoginForm.on('submit', self.LoginAction.bind(self));
-	RegisterForm.on('submit', self.RegisterAction.bind(self));
-	PasswordResetForm.on('submit', self.PasswordResetAction.bind(self));
+	LoginForm.unbind('submit').on('submit', self.LoginAction.bind(self));
+	RegisterForm.unbind('submit').on('submit', self.RegisterAction.bind(self));
+	PasswordResetForm.unbind('submit').on('submit', self.PasswordResetAction.bind(self));
 };
 
 App.prototype.LoginAction = function(e) {

@@ -1,3 +1,4 @@
+			{{#js_compare "this.ranking.length>0"}}
 			<div class="content-block-title">
 				Classificação
 			</div>
@@ -12,20 +13,20 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align:left; width:50%; font-size:18px; font-weight:bold; color:{{color}}">
-									{{title}}
+								<td style="text-align:left; width:50%; font-size:20px; font-weight:bold; color:{{color}}">
+									<i class="fa fa-trophy" aria-hidden="true"></i> {{title}}</br><span style="margin-left:23px; font-size:0.6em;">1º Lugar</span>
 								</td>
 								<td style="text-align:center; width:40%; font-size:18px; font-weight:bold; color:{{color}}">
-									{{value}} pontos
+									{{value}}</br>pontos
 								</td>
 							</tr>
 						{{else}}
 							<tr>
-								<td style="text-align:left; width:50%;">
-									{{title}}
+								<td style="text-align:left; width:43%; margin-left:23px;">
+									<b>{{title}}</b></br><span style="color:#888;">{{position}}º Lugar</span>
 								</td>
 								<td style="text-align:center; width:40%;">
-									{{value}} pontos
+									<b>{{value}}</br>pontos</b>
 								</td>
 							</tr>
 						{{/if}}
@@ -33,6 +34,7 @@
 					</tbody>
 				</table>
 			</div>
+			{{/js_compare}}
 
 			<div class="content-block-title">
 				Tabela de pontos por tarefa

@@ -74,7 +74,7 @@ App.prototype.ReportsDetailScreen = function() {
 				div.html(html);
 
 				var ReportDetailForm = $("#report-detail-form");
-				ReportDetailForm.on('submit', self.ReportsDetailAction.bind(self));
+				ReportDetailForm.unbind('submit').on('submit', self.ReportsDetailAction.bind(self));
 
 				var Jobs = window.Job.read();
 				Jobs.done(function(resultChild) {
@@ -139,9 +139,9 @@ App.prototype.ReportsAddScreen = function() {
 	var self = this;
 	var div = $("#ReportsAddScreen");
 	var ReportAddForm = $("#report-add-form");
-	ReportAddForm.on('submit', self.ReportsAddAction.bind(self));
+	ReportAddForm.unbind('submit').on('submit', self.ReportsAddAction.bind(self));
 
-	 $("#report-addnopic").on('click', self.ReportsAddNoPicAction.bind(self));
+	 $("#report-addnopic").unbind('click').on('click', self.ReportsAddNoPicAction.bind(self));
 
 	var Jobs = window.Job.read();
 	Jobs.done(function(resultChild) {

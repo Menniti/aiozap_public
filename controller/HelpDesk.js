@@ -2,7 +2,7 @@ App.prototype.HelpDeskScreen = function() {
 	var self = this;
 	var div = $("#HelpDeskScreen");
 	var HelpDeskForm = $("#help-desk-form");
-	HelpDeskForm.on('submit', self.HelpDeskAction.bind(self));
+	HelpDeskForm.unbind('submit').on('submit', self.HelpDeskAction.bind(self));
 	if(window.App.auth){
 		$("#input_title").val(window.App.auth.currentUser.email);
 	}
