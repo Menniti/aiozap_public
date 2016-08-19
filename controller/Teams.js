@@ -39,7 +39,40 @@ App.prototype.TeamsDetailScreen = function() {
 			var html = compiledTemplate(editors);
 			divEditors.html(html);
 		});
+
+
+		var divPhotos = $("#TeamsDetailPhotos");
+		var JobPics = window.JobPic.read();
+		JobPics.done(function(resultPic) {
+			var published=[];
+			var photos=[];		
+			for (var i in resultPic){
+				if(resultPic[i].active==1 && result[resultPic[i].user].team==id){
+					published.push(resultPic[i]);
+					photos.push(resultPic[i].file);
+				}
+			}
+			$.get("templates/TeamsDetailPhotos.html", function(temp) {
+				var compiledTemplate = Template7.compile(temp);
+				var html = compiledTemplate(published);
+				divPhotos.html(html);
+
+				var photoBrowser = myApp.photoBrowser({
+					photos : photos
+				});
+				$('.photo').on('click', function (el) {
+					photoBrowser.open($('.photo').index(this));
+				});
+
+			});
+
+
+		});
+
 	});		
+
+
+
 
 };
 
