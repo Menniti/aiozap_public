@@ -16,12 +16,20 @@ App.prototype.GalleryScreen = function() {
 			var html = compiledTemplate(published);
 			div.html(html);
 
-			/*var photoBrowser = myApp.photoBrowser({
-				photos : photos
+			var photoBrowser = myApp.photoBrowser({
+				photos : photos,
+				zoom:false,
+				onDoubleTap: function (el) {
+					window.open($(".photo")[el.activeIndex].childNodes[0].src, '_system', 'location=yes');
+				}
 			});
-			$('.photo').on('click', function () {
-				photoBrowser.open();
-			});*/
+
+
+
+			$('.photo').on('click', function (el) {
+				photoBrowser.open($('.photo').index(this));
+			});
+			
 
 		});
 	});

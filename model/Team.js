@@ -47,7 +47,7 @@ Team.prototype.update = function() {
 	var title = this.title;
 	var color = this.color;
 	var description = this.description.replace(/&nbsp;/gi,' ');
-	var company = this.company;
+	var company = this.company.replace(/&nbsp;/gi,' ');
 	var inputData = {
 		title: title,
 		color: color,

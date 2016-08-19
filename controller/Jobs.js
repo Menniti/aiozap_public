@@ -46,8 +46,8 @@ App.prototype.JobsDetailScreen = function() {
 			var photoBrowser = myApp.photoBrowser({
 				photos : photos
 			});
-			$('.photo').on('click', function () {
-				photoBrowser.open();
+			$('.photo').on('click', function (el) {
+				photoBrowser.open($('.photo').index(this));
 			});
 
 		});
