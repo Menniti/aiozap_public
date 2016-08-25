@@ -1,14 +1,10 @@
 App.prototype.HomeScreen = function() {
 	var self = this;
-	self.FeedsScreen();
-	self.TeamsScreen();
-	self.JobsScreen();
+	self.JobPicsScreen();
 	self.TakeJobPicScreen();
 
 	myApp.onPageAfterAnimation('index', function (page) {
-		self.FeedsScreen();
-		self.TeamsScreen();
-		self.JobsScreen();
+		self.JobPicsScreen();
 		self.TakeJobPicScreen();
 
 		myApp.openPanel('right');

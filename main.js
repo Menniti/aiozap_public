@@ -22,12 +22,9 @@ window.onload = function() {
 //DEVICE READY
 function onDeviceReady(){
 	window.App = new App();
-	window.Feed = new Feed();
-	window.Team = new Team();
 	window.User = new User();
 	window.Admin = new Admin();
 	window.JobPic = new JobPic();
-	window.Report = new Report();
 	window.PluginCamera = new PluginCamera();
 }
 

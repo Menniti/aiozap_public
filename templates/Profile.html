@@ -37,32 +37,6 @@
 					<li>
 						<div class="item-content">
 							<div class="item-inner">
-								<div class="item-title label">Equipe</div>
-								<div class="item-input">
-									<select class="form-control" id="input_team">
-									</select>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
-								<div class="item-title label">Tipo</div>
-								<div class="item-input">
-									<select class="form-control" id="input_type">
-										<option value="0" {{#js_compare "this.type==0"}}selected{{/js_compare}}>Convidado</option>
-										<option value="1" {{#js_compare "this.type==1"}}selected{{/js_compare}}>Colaborador CCP</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</li>
-
-					<input type="hidden" readonly id="input_is_editor" value="{{is_editor}}">
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
 								<div class="item-input">
 									<input type="submit" class="button" value="Salvar alteração">
 								</div>

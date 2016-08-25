@@ -3,7 +3,6 @@ function JobPic() {
 	this.id;
 	this.file;
 	this.title;
-	this.job;
 	this.user;
 	this.active;
 }
@@ -12,12 +11,10 @@ function JobPic() {
 JobPic.prototype.create = function() {
 	var id = this.id;
 	var title = this.title;
-	var job = this.job || '';
 	var user = this.user || '';
 	var active = this.active || 0;
 	var inputData = {
 		title: title,
-		job: job,
 		user: user,
 		active: active,
 		created: new Date().getTime(),
@@ -50,12 +47,10 @@ JobPic.prototype.read = function(id) {
 JobPic.prototype.update = function() {
 	var id = this.id;
 	var title = this.title;
-	var job = this.job;
 	var user = this.user;
 	var active = this.active;
 	var inputData = {
 		title: title,
-		job: job,
 		user: user,
 		active: active,
 	};

@@ -4,33 +4,14 @@ App.prototype.TakeJobPicScreen = function() {
 
 App.prototype.TakeJobPicAction = function() {
 	var self = this;
-	var JobsActionSheet = window.Job.read();
-	JobsActionSheet.done(function(result) {
-		var buttons = [];
-		for(var i in result){
-			var button = {};
-			button.text = result[i].title;
-			button.i = i;
-			button.onClick = self.TakeJobPicClosure;
-			buttons.push(button);
-		}
-		var button = {};
-			button.text = "Cancelar";
-			button.color = "red"; 
-			buttons.push(button);
-		myApp.actions(this,buttons);
-	});		
-	
+	self.TakeJobPicClosure();
 };
 
 App.prototype.TakeJobPicClosure = function() {
 	var self = window.App;
-	//window.JobPic.title = result.title+" "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
-	window.JobPic.title = this.text+" - "+window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
+	window.JobPic.title = window.App.auth.currentUser.email+" - "+moment(new Date().getTime()).format('DD/MM/YY - HH:mm');
 	window.JobPic.user = window.App.auth.currentUser.uid;
-	window.JobPic.job = this.i;
 	window.JobPic.active = 1;
-	console.log(window.JobPic);
 	//TAKE PICTURE
 	var JobPicture = window.PluginCamera.takePicture();
 	JobPicture.then(function(resultPic) {
