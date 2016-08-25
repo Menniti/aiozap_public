@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
-	id        = "br.com.felippegallo.gincanaforcaacao"
-	versionCode="103" 
-	version   = "1.0.3">
-	<name>Gincana Social Força em Ação</name>
+	id        = "br.com.felippegallo.aiozap"
+	versionCode="100" 
+	version   = "1.0.0">
+	<name>Aiozap</name>
 	<description>
-		Gincana Social Força em Ação
+		Aiozap
 	</description>
 
 	<author href="https://felippegallo.com.br" email="contato@felippegallo.com.br">
-		Gincana Social Força em Ação
+		Aiozap
 	</author>
 
 	<icon src="icons/android.png" />

@@ -1,7 +1,6 @@
 App.prototype.HomeScreen = function() {
 	var self = this;
 	self.FeedsScreen();
-	self.PagesScreen();
 	self.TeamsScreen();
 	self.JobsScreen();
 	self.TakeJobPicScreen();
@@ -9,7 +8,6 @@ App.prototype.HomeScreen = function() {
 	myApp.onPageAfterAnimation('index', function (page) {
 		self.FeedsScreen();
 		self.TeamsScreen();
-		self.PagesScreen();
 		self.JobsScreen();
 		self.TakeJobPicScreen();
 
@@ -25,49 +23,21 @@ App.prototype.HomeScreen = function() {
 		}
 	});
 
-	myApp.onPageAfterAnimation('JobsDetail', function (page) {
-		self.JobsDetailScreen();
-	});
-
-	myApp.onPageAfterAnimation('PagesDetail', function (page) {
-		self.PagesDetailScreen();
-	});
-
 	myApp.onPageAfterAnimation('TeamsDetail', function (page) {
 		self.TeamsDetailScreen();
 	});
-
-	myApp.onPageAfterAnimation('Contact', function (page) {
-		self.ContactScreen();
-	});
-
 	myApp.onPageAfterAnimation('Reports', function (page) {
 		self.ReportsScreen();
 	});
 	myApp.onPageAfterAnimation('ReportsDetail', function (page) {
 		self.ReportsDetailScreen();
 	});
-
-	myApp.onPageAfterAnimation('Ranking', function (page) {
-		self.RankingScreen();
-	});
-
 	myApp.onPageAfterAnimation('Login', function (page) {
 		self.LoginScreen();
 	});
-
-	myApp.onPageAfterAnimation('HelpDesk', function (page) {
-		self.HelpDeskScreen();
-	});
-
 	myApp.onPageAfterAnimation('ReportsAdd', function (page) {
 		self.ReportsAddScreen();
 	});
-
-	myApp.onPageAfterAnimation('Gallery', function (page) {
-		self.GalleryScreen();
-	});
-
 	myApp.onPageAfterAnimation('Profile', function (page) {
 		self.ProfileScreen();
 	});

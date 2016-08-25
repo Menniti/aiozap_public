@@ -1,12 +1,12 @@
 #ID NO PHONEGAP BUILD
-id="2142827"
+id="2230598"
 phonegap_user="felippe.gallo@gmail.com"
 phonegap_pass="da010690"
 android_key_pass="123456"
 android_id="93444"
 ios_id=""
-package="br.com.felippegallo.oakiangincana"
-packageios="br.com.felippegallo.oakiangincana"
+package="br.com.felippegallo.aiozap"
+packageios="br.com.felippegallo.aiozap"
 activity="app"
 
 #COMMIT NO GIT

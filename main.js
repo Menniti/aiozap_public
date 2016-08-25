@@ -23,12 +23,9 @@ window.onload = function() {
 function onDeviceReady(){
 	window.App = new App();
 	window.Feed = new Feed();
-	window.Page = new Page();
 	window.Team = new Team();
 	window.User = new User();
 	window.Admin = new Admin();
-	window.Help = new Help();
-	window.Job = new Job();
 	window.JobPic = new JobPic();
 	window.Report = new Report();
 	window.PluginCamera = new PluginCamera();
