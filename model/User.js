@@ -3,10 +3,7 @@ function User() {
 	this.id;
 	this.email;
 	this.file;
-	this.team;
-	this.is_editor;
 	this.name;
-	this.phone;
 	this.type;
 	this.password;
 }
@@ -46,15 +43,11 @@ User.prototype.create = function() {
 	var email = this.email;
 	var password = this.password;
 	var type = this.type || "";
-	var team = this.team || "";
 	firebase.auth().createUserWithEmailAndPassword(email,password).then(function() {
 		var inputData = {
 			email: email,
 			type: type,
-			team: team,
 			created: new Date().getTime(),
-			is_editor: 0,
-			team: 0
 		};
 		var newKey = firebase.auth().currentUser.uid;
 		firebase.database().ref('users/'+newKey).set(inputData);
@@ -84,16 +77,8 @@ User.prototype.read = function(id) {
 User.prototype.update = function() {
 	var id = this.id;
 	var name = this.name;
-	var is_editor = this.is_editor;
-	var phone = this.phone;
-	var team = this.team;
-	var type = this.type;
 	var inputData = {
-		phone: phone,
 		name: name,
-		is_editor: is_editor,
-		team: team,
-		type: type
 	};
 	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
 		return true;

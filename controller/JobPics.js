@@ -7,6 +7,14 @@ App.prototype.JobPicsScreen = function() {
 			var compiledTemplate = Template7.compile(temp);
 			var html = compiledTemplate(result);
 			div.html(html);
+			var ptrContent = $$('.pull-to-refresh-content');
+
+			ptrContent.on('refresh', function (e) {
+				setTimeout(function () {
+					self.JobPicsScreen();
+					myApp.pullToRefreshDone();
+				}, 2000);
+			});
 		});
 	});		
 };
