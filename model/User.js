@@ -4,7 +4,6 @@ function User() {
 	this.email;
 	this.file;
 	this.name;
-	this.type;
 	this.password;
 }
 
@@ -42,11 +41,9 @@ User.prototype.create = function() {
 	var deferred = $.Deferred();
 	var email = this.email;
 	var password = this.password;
-	var type = this.type || "";
 	firebase.auth().createUserWithEmailAndPassword(email,password).then(function() {
 		var inputData = {
 			email: email,
-			type: type,
 			created: new Date().getTime(),
 		};
 		var newKey = firebase.auth().currentUser.uid;
