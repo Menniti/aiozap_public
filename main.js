@@ -25,6 +25,7 @@ function onDeviceReady(){
 	window.User = new User();
 	window.Admin = new Admin();
 	window.JobPic = new JobPic();
+	window.Like = new Like();
 	window.PluginCamera = new PluginCamera();
 }
 

@@ -7,8 +7,6 @@ App.prototype.HomeScreen = function() {
 		self.JobPicsScreen();
 		self.TakeJobPicScreen();
 
-		myApp.openPanel('right');
-
 		if(self.checkLogin()){
 			$("#SidebarLoggedIn").show();
 			$("#SidebarLoggedOut").hide();
@@ -41,10 +39,14 @@ App.prototype.HomeScreen = function() {
 	if(self.checkLogin()){
 		$("#SidebarLoggedIn").show();
 		$("#SidebarLoggedOut").hide();
+		$("#BtnFloating").unbind('click').on('click', self.TakeJobPicAction.bind(self));
 		self.HomeProfile();
 	}else{
 		$("#SidebarLoggedIn").hide();
 		$("#SidebarLoggedOut").show();
+		$("#BtnFloating").unbind('click').on('click', function(){
+			mainView.router.loadPage("views/Login.html");
+		});
 	}
 
 };
@@ -59,8 +61,8 @@ App.prototype.HomeProfile = function(e) {
 			var html = compiledTemplate(result);
 			div.html(html);
 
-			$("#SidebarBtnLogout").on('click', self.SignOutAction.bind(self));
-			$("#SidebarBtnTakeJobPic").on('click', self.TakeJobPicAction.bind(self));
+			$("#SidebarBtnLogout").unbind('click').on('click', self.SignOutAction.bind(self));
+			$("#SidebarBtnTakeJobPic").unbind('click').on('click', self.TakeJobPicAction.bind(self));
 			if(result==null){
 				$("#btn-teampick").hide();
 			}
