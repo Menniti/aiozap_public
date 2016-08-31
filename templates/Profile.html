@@ -1,19 +1,25 @@
-			{{#if file}}
-				<div class="row">
-					<div class="col-100">
+			<div class="content-block">
+				<div class="row profile-card">
+					{{#if file}}
+					<div class="col-50">
 						<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
 					</div>
-				</div>
-			{{/if}}
-				<div class="row">
-					<div class="col-100">
+					{{/if}}
+					<div class="col-50">
 						{{email}}</br>
 						{{name}}</br>
-						{{phone}}</br>
 						{{description}}</br>
 						{{skills}}</br>
 						{{age}}</br>
 						{{carreer}}</br>
 					</div>
+					<div class="col-100">
+						<a class="button" href="tel:{{phone}}">Convocar!</a></br>
+					</div>
 				</div>
+			</div>
+
+			<div class="content-block" id="ProfilePicsScreen">
+			</div>
+
 

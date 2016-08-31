@@ -188,11 +188,11 @@ azul 2B4162
 .profilepic-img{
 	margin:10px auto;
 	overflow:hidden;
-	width:200px;
-	border-radius:10px;
+	width:95%;
+	border-radius:3px;
 }
 
-.profilepic-img > img,.reportpic-img > a > img{
+.profilepic-img > img{
 	width:100%;
 }
 
@@ -229,6 +229,13 @@ azul 2B4162
 	background-position:center center;
 	background-size:cover;
 	background-repeat:no-repeat;
+}
+
+.profile-card{
+	padding:10px;
+	background: #2B4162;
+    color: #AAD922;
+	border-radius:3px;
 }
 
 .card-header{
