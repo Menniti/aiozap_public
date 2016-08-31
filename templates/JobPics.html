@@ -14,11 +14,23 @@
 								{{/if}}
 								<div class="card-content">
 									<div class="card-content-inner">
-										<p class="color-gray">{{title}}</p>
+										<div class="row">
+											<div class="col-15 text-center">
+												{{#if user_pic}}
+													<div class="card-profilepic"><img src="{{user_pic}}" /></div>
+												{{else}}
+													<div class="card-profilepic"><img src="assets/img/profile_placeholder.png" /></div>
+												{{/if}}
+											</div>
+											<div class="col-65">
+												<a href="views/Profile.html?id={{user}}"><span class="card-name">{{user_name}}</span></br><span class="card-date">{{date}}</span></a>
+											</div>
+											<div class="col-20 text-center">
+												<a href="#" class="link btn-whoa" id="{{@key}}"><span class="card-like">Whoa!</span></br><span class="card-like-number">({{likes}})</span></a>
+											</div>
+										</div>
+
 									</div>
-								</div>
-								<div class="card-footer">
-									<a href="#" class="link btn-whoa" id="{{@key}}">Whoa! ({{likes}})</a>
 								</div>
 							</div>
 						{{/each}}

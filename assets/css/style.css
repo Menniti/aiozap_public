@@ -1,4 +1,12 @@
-/* === Floating Action Button === */
+/*
+verde AAD922
+azul 2B4162
+*/
+
+.list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea{
+	color:#ccc;
+}
+
 .floating-button {
 	position: absolute;
 	right: 16px;
@@ -8,7 +16,7 @@
 	border-radius: 50%;
 	z-index: 1500;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	background-color: #2196f3;
+	background-color: #AAD922;
 	color: #fff;
 	overflow: hidden;
 	-webkit-transition-duration: 300ms;
@@ -31,13 +39,54 @@
 .content-block-title{
 	color:#555;
 }
+.navbar:after{
+	background:transparent;
+}
+
+.navbar, .subnavbar, .toolbar{
+	background:#2B4162;
+	color:#AAD922;
+}
+.navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
+	color:#AAD922;
+}
+
+.actions-modal-button{
+	color:#AAD922;
+	background:#2B4162;
+}
+
+.actions-modal-button:last-child{
+	color:#c5c5c5;
+	background:#2B4162;
+}
+
+
+.list-block .item-link{
+	color:#AAD922 !important;
+}
+
+.list-block ul:before,.list-block ul:after{
+	background:transparent;
+}
+
+.list-block ul{
+	background:#2B4162;
+}
 
 .page{
 	background:#e0e0e0 !important;
+	background:#222B38 !important;
+	color:#AAD922;
+}
+
+.content-block-title{
+	color:#AAD922;
 }
 
 .panel{
-	background:#ffffff !important;
+	background:#2B4162 !important;
+	border:0px !important;
 }
 
 .notifications .notification-item{
@@ -45,8 +94,8 @@
 }
 .button{
 	border:0px;
-	background:#999;
-	color:white;
+	background:#AAD922;
+	color:#2B4162;
 	height:32px;
 }
 
@@ -70,12 +119,12 @@
 	font-size:16px;
 }
 .contact-email{
-	color:#666;
+	color:#ccc;
 	font-size:14px;
 }
 
 .contact-phone{
-	color:#666;
+	color:#ccc;
 	font-size:12px;
 }
 
@@ -91,6 +140,7 @@
 .loading{
 	text-align:center;
 	padding-top:20px;
+	color:#AAD922;
 }
 
 .panel{
@@ -108,25 +158,6 @@
 	font-size:0.9em;
 }
 
-
-.table{
-	width:100%;
-}
-
-
-tr{
-	background:white;
-	text-align:center;
-	font-size:12px;
-}
-
-td:nth-child(1){width:29%;}
-
-td{
-	padding:10px 0px;
-	width:14%;
-	display:inline-block;
-}
 
 .ranking-img{
 	margin:0 auto;
@@ -200,7 +231,6 @@ td{
 	background-repeat:no-repeat;
 }
 
-
 .card-header{
 	height:220px;
 	background-position:center center;
@@ -209,14 +239,53 @@ td{
 	text-shadow:0px 0px 2px #333;
 }
 
-.card-img{
-	width:100%;
+.card-profilepic{
+	margin:0 auto;
+	text-align:center;
+	height:36px;
+	width:36px;
+	margin-top:2px;
+	border-radius:3px;
+	overflow:hidden;
 }
 
+.card-profilepic > img{
+	width:36px;
+	min-height:36px;
+}
+
+.card-name{
+	font-size:1.1em;
+	font-weight:bold;
+	color:#AAD922;
+	color:#2B4162;
+}
+.card-date{
+	font-size:0.9em;
+	color:#6B8819;
+}
+.card-like{
+	font-size:1.1em;
+	font-weight:bold;
+	color:#333;
+	color:#AAD922;
+	color:#2B4162;
+}
+.card-like-number{
+	font-size:0.9em;
+	color:#6B8819;
+}
+.card-img{
+	width:100%;
+	height:200px;
+	overflow:hidden;
+}
 .card-img > img{
 	width:100%;
 }
-
+.card-content-inner{
+	padding:10px 15px;
+}
 
 .text-center{
 	text-align:center;

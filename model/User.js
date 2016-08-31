@@ -5,6 +5,11 @@ function User() {
 	this.file;
 	this.name;
 	this.password;
+	this.phone;
+	this.age;
+	this.description;
+	this.skills;
+	this.carreer;
 }
 
 //LOGIN
@@ -74,8 +79,18 @@ User.prototype.read = function(id) {
 User.prototype.update = function() {
 	var id = this.id;
 	var name = this.name;
+	var phone = this.phone;
+	var age = this.age;
+	var description = this.description;
+	var skills = this.skills;
+	var carreer = this.carreer;
 	var inputData = {
 		name: name,
+		phone:phone,
+		age:age,
+		description:description,
+		skills:skills,
+		carreer:carreer,
 	};
 	return firebase.database().ref('users/'+id).update(inputData).then(function(result) {
 		return true;

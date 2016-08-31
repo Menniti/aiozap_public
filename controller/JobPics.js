@@ -3,43 +3,49 @@ App.prototype.JobPicsScreen = function() {
 	var self = this;
 	var JobPics = window.JobPic.read();
 	JobPics.done(function(result) {
-		var Likes = window.Like.read();
-			Likes.done(function(resultLikes) {
-				$.get("templates/JobPics.html", function(temp) {
-					//var Pics = [];
-					for(var i in result){
-						result[i].id = i;
-						result[i].likes = 0;
-						for(var k in resultLikes){
-							if(resultLikes[k].jobpic==i){
-								result[i].likes++;
+		var Users = window.User.read();
+		Users.done(function(resultUsers) {
+			var Likes = window.Like.read();
+				Likes.done(function(resultLikes) {
+					$.get("templates/JobPics.html", function(temp) {
+						//var Pics = [];
+						for(var i in result){
+							result[i].id = i;
+							result[i].user_name = resultUsers[result[i].user].name || resultUsers[result[i].user].email;
+							result[i].user_pic = resultUsers[result[i].user].file;
+							result[i].likes = 0;
+							result[i].date = moment(result[i].created).format('DD/MM/YY - HH:mm');
+							for(var k in resultLikes){
+								if(resultLikes[k].jobpic==i){
+									result[i].likes++;
+								}
 							}
+							//Pics.push(result[i]);
 						}
-						//Pics.push(result[i]);
-					}
-					//Pics.reverse();
+						//Pics.reverse();
 
-					var compiledTemplate = Template7.compile(temp);
-					var html = compiledTemplate(result);
-					div.html(html);
+						var compiledTemplate = Template7.compile(temp);
+						var html = compiledTemplate(result);
+						div.html(html);
 
-					if(self.checkLogin()){
-						$(".btn-whoa").unbind('click').on('click', self.JobPicsAction.bind(self));
-					}else{
-						$(".btn-whoa").unbind('click').on('click', function(){
-							mainView.router.loadPage("views/Login.html");
+						if(self.checkLogin()){
+							$(".btn-whoa").unbind('click').on('click', self.JobPicsAction.bind(self));
+						}else{
+							$(".btn-whoa").unbind('click').on('click', function(){
+								mainView.router.loadPage("views/Login.html");
+							});
+						}
+
+						var ptrContent = $$('.pull-to-refresh-content');
+						ptrContent.on('refresh', function (e) {
+							setTimeout(function () {
+								self.JobPicsScreen();
+								myApp.pullToRefreshDone();
+							}, 2000);
 						});
-					}
-
-					var ptrContent = $$('.pull-to-refresh-content');
-					ptrContent.on('refresh', function (e) {
-						setTimeout(function () {
-							self.JobPicsScreen();
-							myApp.pullToRefreshDone();
-						}, 2000);
 					});
 				});
-			});
+		});		
 	});		
 };
 

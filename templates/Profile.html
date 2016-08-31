@@ -1,41 +1,19 @@
-		{{#js_compare "this.file"}}
-			<div class="row">
-				<div class="col-100">
-					<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
+			{{#if file}}
+				<div class="row">
+					<div class="col-100">
+						<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
+					</div>
 				</div>
-			</div>
-		{{else}}
-			<div class="row">
-				<div class="col-100">
-					<div class="profilepic-img"><img id="BtnProfilePic" src="assets/img/profile_placeholder.png" /></div>
+			{{/if}}
+				<div class="row">
+					<div class="col-100">
+						{{email}}</br>
+						{{name}}</br>
+						{{phone}}</br>
+						{{description}}</br>
+						{{skills}}</br>
+						{{age}}</br>
+						{{carreer}}</br>
+					</div>
 				</div>
-			</div>
-		{{/js_compare}}
-		<form id="profile-form">
-			<div class="list-block">
-				<ul>
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
-								<div class="item-title label">Nome</div>
-								<div class="item-input">
-									<input type="text" id="input_name" placeholder="Digite seu nome" value={{name}}>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
-								<div class="item-input">
-									<input type="submit" class="button" value="Salvar alteração">
-								</div>
-							</div>
-						</div>
-					</li>
-
-				</ul>
-			</div>
-		</form>
-
 

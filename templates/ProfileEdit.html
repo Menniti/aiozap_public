@@ -1,0 +1,91 @@
+		{{#js_compare "this.file"}}
+			<div class="row">
+				<div class="col-100">
+					<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
+				</div>
+			</div>
+		{{else}}
+			<div class="row">
+				<div class="col-100">
+					<div class="profilepic-img"><img id="BtnProfilePic" src="assets/img/profile_placeholder.png" /></div>
+				</div>
+			</div>
+		{{/js_compare}}
+		<form id="profile-form">
+			<div class="list-block">
+				<ul>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Nome</div>
+								<div class="item-input">
+									<input type="text" id="input_name" placeholder="Digite seu nome" value={{name}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Idade</div>
+								<div class="item-input">
+									<input type="text" id="input_age" placeholder="Idade" value={{age}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Descrição</div>
+								<div class="item-input">
+									<input type="text" id="input_description" placeholder="Descrição" value={{description}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Habilidades</div>
+								<div class="item-input">
+									<input type="text" id="input_skills" placeholder="Habilidades" value={{skills}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Carreira</div>
+								<div class="item-input">
+									<input type="text" id="input_carreer" placeholder="Carreira" value={{carreer}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">Telefone</div>
+								<div class="item-input">
+									<input type="text" id="input_phone" placeholder="Telefone" value={{phone}}>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<input type="submit" class="button" value="Salvar alteração">
+								</div>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</form>
+
+

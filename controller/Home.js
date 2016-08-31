@@ -35,6 +35,9 @@ App.prototype.HomeScreen = function() {
 	myApp.onPageAfterAnimation('Profile', function (page) {
 		self.ProfileScreen();
 	});
+	myApp.onPageAfterAnimation('ProfileEdit', function (page) {
+		self.ProfileEditScreen();
+	});
 
 	if(self.checkLogin()){
 		$("#SidebarLoggedIn").show();
