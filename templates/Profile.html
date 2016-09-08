@@ -8,9 +8,12 @@
 						<div class="float-info">
 							<div class="row">
 								<div class="col-100 see-more-toggle">
-									{{#if name}}<h1>{{name}}</h1>{{/if}}
-									{{#if age}}<h6>{{age}} anos</h6>{{/if}}
-									<h6><span class="silver">{{email}}</span></h6>
+									{{#if name}}<h1><!--<i class="fa fa-plus-square" aria-hidden="true"></i>--> {{name}}</h1>{{/if}}
+									<h6>
+									<span class="silver">{{email}}</span></br>
+									{{#if age}}{{age}} anos</br>{{/if}}
+									<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+									</h6>
 								</div>
 
 								<div class="col-100 see-more">
