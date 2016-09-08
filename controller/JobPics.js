@@ -59,11 +59,11 @@ App.prototype.JobPicsAction = function(e) {
 		var is_liked=0;
 		for(var i in result){
 			if(result[i].user==me && result[i].jobpic==pic){
-				is_liked=1;
+				is_liked=i;
 			}
 		}
-		if(is_liked==1){
-			var Likes = window.Like.delete(i);
+		if(is_liked!=0){
+			var Likes = window.Like.delete(is_liked);
 			Likes.then(function(result) {
 				if(result!=false){
 					self.JobPicsScreen();
