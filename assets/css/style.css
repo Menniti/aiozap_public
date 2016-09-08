@@ -79,7 +79,7 @@ h1,h2,h3,h4,h5,h6{
 .list-block ul{
 	background:#2B4162;
 	background:#3E577D;
-	background:rgba(255,255,255,0.3);
+	background:rgba(255,255,255,0.25);
 	border-radius:5px;
 	width:90%;
 	margin:0 auto;
@@ -103,6 +103,7 @@ h1,h2,h3,h4,h5,h6{
 
 .content-block-title{
 	color:#AAD922;
+	color:#2B4162;
 }
 
 .panel{
@@ -116,7 +117,7 @@ h1,h2,h3,h4,h5,h6{
 .button{
 	border:0px;
 	background:#AAD922;
-	color:#2B4162;
+	color:#161E29;
 	box-shadow:inset 0px 0px 10px #92A3BD;
 }
 
@@ -298,6 +299,10 @@ h1,h2,h3,h4,h5,h6{
 .profile-card{
 	padding:10px;
 	border-radius:3px;
+}
+
+.silver{
+	color:#ccc;
 }
 
 .card-header{
