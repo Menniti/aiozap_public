@@ -7,16 +7,25 @@
 					{{/if}}
 						<div class="float-info">
 							<div class="row">
-								<div class="col-100 see-more-toggle">
+								<div class="col-25 text-center">
+									<h1 id="profilePicsNumber">{{pics}}</h1><h6 class="silver">Fotos</h6>
+								</div>
+								<div class="col-25 text-center">
+									<h1 id="profileLikesNumber">{{likes}}</h1><h6 class="silver">Whoa!</h6>
+								</div>
+								<div class="col-50 see-more-toggle">
 									{{#if name}}<h1><!--<i class="fa fa-plus-square" aria-hidden="true"></i>--> {{name}}</h1>{{/if}}
-									<h6>
-									<span class="silver">{{email}}</span></br>
-									{{#if age}}{{age}} anos</br>{{/if}}
-									<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+									<h6 class="see-more silver" style="display:inline; position:relative; top:-6px;">
+										Ver mais 
+										<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+									</h6>
+									<h6 class="see-more silver" style="position:relative; top:-6px;">
+										{{email}}
 									</h6>
 								</div>
 
 								<div class="col-100 see-more">
+									<p><b>Idade:</b></br><span class="silver">{{#if age}}{{age}}{{else}}Não preenchido{{/if}}</span></p>
 									<p><b>Descrição:</b></br><span class="silver">{{#if description}}{{description}}{{else}}Não preenchido{{/if}}</span></p>
 								</div>
 								<div class="col-50 see-more">
@@ -25,7 +34,7 @@
 								<div class="col-50 see-more">
 									<p><b>Habilidades:</b></br><span class="silver">{{#if skills}}{{skills}}{{else}}Não preenchido{{/if}}</span></p>
 								</div>
-								<div class="col-100">
+								<div class="col-100 see-more">
 									</br>
 									{{#if phone}}
 										<a class="button button-big" href="tel:{{phone}}">Convocar!</a>

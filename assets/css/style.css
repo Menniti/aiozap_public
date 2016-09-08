@@ -226,14 +226,15 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .float-info{
+	border-top:3px solid #AAD922;
 	text-align:right;
 	width:90%;
-	padding:5%;
+	padding:10px 5%;
 	position:absolute;
 	bottom:0px;
 	right:0px;
-	color:#AAD922;
-	background:rgba(43, 65, 98,0.75);
+	color:#2B4162;
+	background:rgba(255,255,255,0.9);
 }
 
 .profile-banner-img{
@@ -320,7 +321,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .silver{
-	color:#ccc;
+	color:#666;
 }
 
 .card-header{
