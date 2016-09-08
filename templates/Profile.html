@@ -7,21 +7,21 @@
 					{{/if}}
 						<div class="float-info">
 							<div class="row">
-								<div class="col-25 text-center">
-									<h1 id="profilePicsNumber">{{pics}}</h1><h6 class="silver">Fotos</h6>
-								</div>
-								<div class="col-25 text-center">
-									<h1 id="profileLikesNumber">{{likes}}</h1><h6 class="silver">Whoa!</h6>
-								</div>
-								<div class="col-50 see-more-toggle">
+								<div class="col-60 see-more-toggle">
 									{{#if name}}<h1><!--<i class="fa fa-plus-square" aria-hidden="true"></i>--> {{name}}</h1>{{/if}}
 									<h6 class="see-more silver" style="display:inline; position:relative; top:-6px;">
-										Ver mais 
 										<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+										Ver mais 
 									</h6>
-									<h6 class="see-more silver" style="position:relative; top:-6px;">
+									<h6 class="see-more silver">
 										{{email}}
 									</h6>
+								</div>
+								<div class="col-20 text-center">
+									<h1 id="profilePicsNumber">{{pics}}</h1><h6 class="silver">Fotos</h6>
+								</div>
+								<div class="col-20 text-center">
+									<h1 id="profileLikesNumber">{{likes}}</h1><h6 class="silver">Whoa!</h6>
 								</div>
 
 								<div class="col-100 see-more">
@@ -29,10 +29,10 @@
 									<p><b>Descrição:</b></br><span class="silver">{{#if description}}{{description}}{{else}}Não preenchido{{/if}}</span></p>
 								</div>
 								<div class="col-50 see-more">
-									<p><b>Carreira:</b></br><span class="silver">{{#if carreer}}{{carreer}}{{else}}Não preenchido{{/if}}</span></p>
+									<p><b>Habilidades:</b></br><span class="silver">{{#if skills}}{{skills}}{{else}}Não preenchido{{/if}}</span></p>
 								</div>
 								<div class="col-50 see-more">
-									<p><b>Habilidades:</b></br><span class="silver">{{#if skills}}{{skills}}{{else}}Não preenchido{{/if}}</span></p>
+									<p><b>Carreira:</b></br><span class="silver">{{#if carreer}}{{carreer}}{{else}}Não preenchido{{/if}}</span></p>
 								</div>
 								<div class="col-100 see-more">
 									</br>

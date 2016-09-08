@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6{
 .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea{
 	color:#ccc;
 	color:#0079bf;
-	color:#777;
+	color:#758C35;
 }
 
 .floating-button {
@@ -53,22 +53,23 @@ h1,h2,h3,h4,h5,h6{
 
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
 	background:#0079bf;
-	color:#fff;
+	color:#C0F722;
     box-shadow: inset 0px 0px 10px 0px #212E42;
-}
-
-.navbar, .subnavbar, .toolbar{
-	background:#0079bf;
-	color:#fff;
-    box-shadow: inset 0px 0px 10px 0px #212E42;
-}
-.navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
-	color:#fff;
 }
 .navbar .center{
 	font-size:20px;
 }
 
+.navbar, .subnavbar, .toolbar{
+	background:#0079bf;
+	color:#C0F722;
+	color:#fff;
+    box-shadow: inset 0px 0px 10px 0px #212E42;
+}
+.navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
+	color:#C0F722;
+	color:#fff;
+}
 
 .modal,.modal-inner,.modal-button{
 	color:#C0F722;
@@ -231,7 +232,7 @@ h1,h2,h3,h4,h5,h6{
 
 .float-info{
 	border-top:3px solid #C0F722;
-	text-align:right;
+	text-align:left;
 	width:90%;
 	padding:10px 5%;
 	position:absolute;
