@@ -365,6 +365,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .card-name{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:inline-block;
+	width:100%;
 	font-size:1.1em;
 	font-weight:bold;
 	color:#AAD922;

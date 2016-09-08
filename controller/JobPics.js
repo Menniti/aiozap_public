@@ -8,7 +8,7 @@ App.prototype.JobPicsScreen = function() {
 			var Likes = window.Like.read();
 				Likes.done(function(resultLikes) {
 					$.get("templates/JobPics.html", function(temp) {
-						//var Pics = [];
+						var Pics = [];
 						for(var i in result){
 							result[i].id = i;
 							result[i].user_name = resultUsers[result[i].user].name || resultUsers[result[i].user].email;
@@ -20,12 +20,12 @@ App.prototype.JobPicsScreen = function() {
 									result[i].likes++;
 								}
 							}
-							//Pics.push(result[i]);
+							Pics.push(result[i]);
 						}
-						//Pics.reverse();
+						Pics.reverse();
 
 						var compiledTemplate = Template7.compile(temp);
-						var html = compiledTemplate(result);
+						var html = compiledTemplate(Pics);
 						div.html(html);
 
 						if(self.checkLogin()){
