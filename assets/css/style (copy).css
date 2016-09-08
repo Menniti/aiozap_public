@@ -3,14 +3,8 @@ verde AAD922
 azul 2B4162
 */
 
-h1,h2,h3,h4,h5,h6{
-	margin:0px;
-}
-
 .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea{
 	color:#ccc;
-	color:#2B4162;
-	color:#758C35;
 }
 
 .floating-button {
@@ -78,27 +72,12 @@ h1,h2,h3,h4,h5,h6{
 
 .list-block ul{
 	background:#2B4162;
-	background:#3E577D;
-	background:rgba(255,255,255,0.3);
-	border-radius:5px;
-	width:90%;
-	margin:0 auto;
 }
-
-.list-block li{
-	border-bottom: 1px solid #999;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-.list-block li:last-child{
-	border-bottom: 0px;
-}
-
 
 .page{
 	background:#e0e0e0 !important;
 	background:#222B38 !important;
-	background:#ddd !important;
-	color:#2B4162;
+	color:#AAD922;
 }
 
 .content-block-title{
@@ -117,7 +96,7 @@ h1,h2,h3,h4,h5,h6{
 	border:0px;
 	background:#AAD922;
 	color:#2B4162;
-	box-shadow:inset 0px 0px 10px #92A3BD;
+	height:32px;
 }
 
 .list-block .item-inner:after{
@@ -137,11 +116,11 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .contact-name{
-	font-size:18px;
+	font-size:16px;
 }
 .contact-email{
 	color:#ccc;
-	font-size:12px;
+	font-size:14px;
 }
 
 .contact-phone{
@@ -161,7 +140,7 @@ h1,h2,h3,h4,h5,h6{
 .loading{
 	text-align:center;
 	padding-top:20px;
-	color:#2B4162;
+	color:#AAD922;
 }
 
 .panel{
@@ -206,55 +185,16 @@ h1,h2,h3,h4,h5,h6{
 	width:100%;
 }
 
-.float-info{
-	text-align:right;
-	width:90%;
-	padding:5%;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	color:#AAD922;
-	background:rgba(43, 65, 98,0.75);
-}
-
-.profile-banner-img{
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center center;
-	position:relative;
-	margin:0 auto;
-	overflow:hidden;
-	width:100%;
-	height:100vh;
-	height:calc(100vh - 44px);
-	box-shadow:0px 0px 5px #aaa;
-}
-
-.profile-banner-img > img{
-    width: 100%;
-	height:100%;
-}
-
-
 .profilepic-img{
 	margin:10px auto;
 	overflow:hidden;
-	width:90%;
-	max-height:350px;
-	border-radius:5px;
-	box-shadow:0px 0px 5px #aaa;
+	width:95%;
+	border-radius:3px;
 }
 
 .profilepic-img > img{
-    width: 100%;
-	min-height:100%;
-    /*position: relative;
-    top: -50%;
-    left: 50%;
-    margin-left: -150px;
-    margin-top: 175px;*/
+	width:100%;
 }
-
 
 .jobpic-img{
 	border-radius:10px;
@@ -291,12 +231,10 @@ h1,h2,h3,h4,h5,h6{
 	background-repeat:no-repeat;
 }
 
-.no-margin{
-	margin:0;
-}
-
 .profile-card{
 	padding:10px;
+	background: #2B4162;
+    color: #AAD922;
 	border-radius:3px;
 }
 
@@ -306,24 +244,6 @@ h1,h2,h3,h4,h5,h6{
 	background-size:cover;
 	background-repeat:no-repeat;
 	text-shadow:0px 0px 2px #333;
-}
-
-#ProfilePicsScreen{
-	margin:0;
-	padding:0;
-}
-
-.profile-photos{
-	margin:0 auto;
-	text-align:center;
-	width:100%;
-	height:100px;
-	overflow:hidden;
-}
-
-.profile-photos > img{
-	width:100%;
-	min-height:100%;
 }
 
 .card-profilepic{
@@ -378,12 +298,7 @@ h1,h2,h3,h4,h5,h6{
 	text-align:center;
 }
 
-.see-more{
-	display:none;
-}
-
 p{
-	font-size:12px;
 	margin-bottom:0px;
 }
 

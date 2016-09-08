@@ -38,8 +38,21 @@
 		<preference name="StatusBarBackgroundColor" value="#000000"/>
 	</gap:plugin>
 
+	<!-- Internet Access CLI -->
+	<plugin name="cordova-plugin-whitelist" version="1" />
+	<access origin="*" />
+	<allow-navigation href="*" />
+	<allow-intent href="*" />
+	<platform name="android">
+		<allow-intent href="market : *" />
+	</platform>
+	<platform name="ios">
+		<allow-intent href="itms : *" />
+		<allow-intent href="itms-apps : *" />
+	</platform>
+
 	<!-- Custom Preferences-->
-	<preference name="phonegap-version" value="3.7.0" />    
+	<preference name="phonegap-version" value="cli-6.3.0" />    
 	<!--<preference name="phonegap-version" value="3.5.0" />-->
 	<preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 	<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->

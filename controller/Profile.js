@@ -9,6 +9,10 @@ App.prototype.ProfileScreen = function() {
 			var html = compiledTemplate(result);
 			div.html(html);
 
+			$(".see-more-toggle").unbind('click').on('click', function(){
+				$(".see-more").toggle();
+			});
+
 			div = $("#ProfilePicsScreen");
 			var JobPics = window.JobPic.read();
 			JobPics.done(function(result) {

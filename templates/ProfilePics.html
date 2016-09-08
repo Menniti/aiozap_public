@@ -1,13 +1,11 @@
-			<div class="row profile-card">
-				<div class="row">
-					{{#each this}}
-						<div class="col-20 text-center">
-							{{#if file}}
-								<div class="card-profilepic"><img onclick="myApp.photoBrowser({photos:['{{file}}']}).open();" src="{{file}}" /></div>
-							{{else}}
-								<div class="card-profilepic"><img src="assets/img/profile_placeholder.png" /></div>
-							{{/if}}
-						</div>
-					{{/each}}
-				</div>
-			</div>	
+			<div class="row no-gutter">
+				{{#each this}}
+					<div class="col-33 text-center">
+						{{#if file}}
+							<div class="profile-photos"><img onclick="myApp.photoBrowser({photos:['{{file}}']}).open();" src="{{file}}" /></div>
+						{{else}}
+							<div class="profile-photos"><img src="assets/img/profile_placeholder.png" /></div>
+						{{/if}}
+					</div>
+				{{/each}}
+			</div>

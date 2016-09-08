@@ -1,24 +1,40 @@
-			<div class="content-block">
-				<div class="row profile-card">
+			<div class="row no-gutter">
+				<div class="col-100">
 					{{#if file}}
-					<div class="col-50">
-						<div class="profilepic-img"><img id="BtnProfilePic" src="{{file}}" /></div>
-					</div>
+						<div class="profile-banner-img" style="background-image:url('{{file}}')">
+					{{else}}
+						<div class="profile-banner-img" style="background-image:url('assets/img/profile_placeholder.png')">
 					{{/if}}
-					<div class="col-50">
-						{{email}}</br>
-						{{name}}</br>
-						{{description}}</br>
-						{{skills}}</br>
-						{{age}}</br>
-						{{carreer}}</br>
-					</div>
-					<div class="col-100">
-						<a class="button" href="tel:{{phone}}">Convocar!</a></br>
+						<div class="float-info">
+							<div class="row">
+								<div class="col-100 see-more-toggle">
+									{{#if name}}<h1>{{name}}</h1>{{/if}}
+									<h6>{{email}}</h6>
+									{{#if age}}<h6>{{age}} anos</h6>{{/if}}
+								</div>
+
+								<div class="col-100 see-more">
+									<p><b>Descrição:</b></br>{{#if description}}{{description}}{{else}}Não preenchido{{/if}}</p>
+								</div>
+								<div class="col-50 see-more">
+									<p><b>Carreira:</b></br>{{#if carreer}}{{carreer}}{{else}}Não preenchido{{/if}}</p>
+								</div>
+								<div class="col-50 see-more">
+									<p><b>Habilidades:</b></br>{{#if skills}}{{skills}}{{else}}Não preenchido{{/if}}</p>
+								</div>
+								<div class="col-100">
+									</br>
+									{{#if phone}}
+										<a class="button button-big" href="tel:{{phone}}">Convocar!</a>
+									{{else}}
+										<a class="button button-big" disabled href="#">Convocar!</a>
+									{{/if}}
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
 			<div class="content-block" id="ProfilePicsScreen">
 			</div>
 
