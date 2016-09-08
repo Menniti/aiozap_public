@@ -1,6 +1,6 @@
 /*
-verde AAD922
-azul 2B4162
+verde BEFF00
+azul 0079bf
 */
 
 h1,h2,h3,h4,h5,h6{
@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6{
 
 .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea{
 	color:#ccc;
-	color:#2B4162;
+	color:#0079bf;
 	color:#758C35;
 }
 
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6{
 	border-radius: 50%;
 	z-index: 1500;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	background-color: #AAD922;
+	background-color: #BEFF00;
 	color: #fff;
 	overflow: hidden;
 	-webkit-transition-duration: 300ms;
@@ -52,39 +52,39 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
-	background:#2B4162;
-	color:#AAD922;
+	background:#0079bf;
+	color:#BEFF00;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
 
 .navbar, .subnavbar, .toolbar{
-	background:#2B4162;
-	color:#AAD922;
+	background:#0079bf;
+	color:#BEFF00;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
 .navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
-	color:#AAD922;
+	color:#BEFF00;
 }
 
 .modal,.modal-inner,.modal-button{
-	color:#AAD922;
-	background:#2B4162;
+	color:#BEFF00;
+	background:#0079bf;
 }
 
 .actions-modal-button{
-	color:#AAD922;
-	background:#2B4162;
+	color:#BEFF00;
+	background:#0079bf;
 }
 
 .actions-modal-button:last-child{
 	color:#c5c5c5;
-	background:#2B4162;
+	background:#0079bf;
 }
 
 
 .list-block .item-link{
-	color:#AAD922 !important;
-	color:#2B4162 !important;
+	color:#BEFF00 !important;
+	color:#0079bf !important;
 }
 
 .list-block ul:before,.list-block ul:after{
@@ -92,7 +92,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .list-block ul{
-	background:#2B4162;
+	background:#0079bf;
 	background:#3E577D;
 	background:rgba(255,255,255,0.25);
 	border-radius:5px;
@@ -113,16 +113,16 @@ h1,h2,h3,h4,h5,h6{
 	background:#e0e0e0 !important;
 	background:#222B38 !important;
 	background:#ddd !important;
-	color:#2B4162;
+	color:#0079bf;
 }
 
 .content-block-title{
-	color:#AAD922;
-	color:#2B4162;
+	color:#BEFF00;
+	color:#0079bf;
 }
 
 .panel{
-	background:#2B4162 !important;
+	background:#0079bf !important;
 	background:#DBDBDB !important;
 	border:0px !important;
     box-shadow: inset 0px 0px 10px 0px #212E42;
@@ -133,7 +133,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .button{
 	border:0px;
-	background:#AAD922;
+	background:#BEFF00;
 	color:#161E29;
 	box-shadow:inset 0px 0px 10px #92A3BD;
 }
@@ -180,7 +180,7 @@ h1,h2,h3,h4,h5,h6{
 .loading{
 	text-align:center;
 	padding-top:20px;
-	color:#2B4162;
+	color:#0079bf;
 }
 
 .panel{
@@ -226,14 +226,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .float-info{
-	border-top:3px solid #AAD922;
+	border-top:3px solid #BEFF00;
 	text-align:right;
 	width:90%;
 	padding:10px 5%;
 	position:absolute;
 	bottom:0px;
 	right:0px;
-	color:#2B4162;
+	color:#0079bf;
 	background:rgba(255,255,255,0.9);
 }
 
@@ -372,8 +372,8 @@ h1,h2,h3,h4,h5,h6{
 	width:100%;
 	font-size:1.1em;
 	font-weight:bold;
-	color:#AAD922;
-	color:#2B4162;
+	color:#BEFF00;
+	color:#0079bf;
 }
 .card-date{
 	font-size:0.9em;
@@ -383,8 +383,8 @@ h1,h2,h3,h4,h5,h6{
 	font-size:1.1em;
 	font-weight:bold;
 	color:#333;
-	color:#AAD922;
-	color:#2B4162;
+	color:#BEFF00;
+	color:#0079bf;
 }
 .card-like-number{
 	font-size:0.9em;
@@ -433,7 +433,7 @@ p{
 }
 
 .lime{
-	color:#AAD922;
+	color:#BEFF00;
 }
 
 
