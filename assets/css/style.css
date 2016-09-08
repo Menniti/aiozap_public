@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6{
 	color:#C0F722;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
-.navbar .center{
+.navbar .center,.navbar .left,.navbar .right{
 	font-size:20px;
 }
 
