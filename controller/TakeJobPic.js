@@ -41,7 +41,8 @@ App.prototype.TakeJobPicClosure = function() {
 							var JobPics = window.JobPic.updateFile();
 							JobPics.then(function(result) {
 								if(result==true){
-									myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
+									self.JobPicsScreen();
+									//myApp.alert(self.msgSuccessDefault,self.msgDefaultTitle);
 								}else{
 									myApp.alert(self.msgErrorDefault,self.msgDefaultTitle);
 								}
