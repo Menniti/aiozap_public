@@ -17,6 +17,11 @@ window.onload = function() {
 			onDeviceReady();
 		},2500);
 	}
+	document.addEventListener("backbutton", function(){
+		myApp.closeModal();
+		mainView.router.back();
+	}, false);
+
 }
 
 //DEVICE READY
