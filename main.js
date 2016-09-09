@@ -19,6 +19,8 @@ window.onload = function() {
 	}
 	document.addEventListener("backbutton", function(){
 		myApp.closeModal();
+		myApp.closePanel();
+		myApp.closeNotification();
 		mainView.router.back();
 	}, false);
 
