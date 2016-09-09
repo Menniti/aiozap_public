@@ -54,6 +54,7 @@ h1,h2,h3,h4,h5,h6{
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
 	background:#197CB5;
 	color:#C0F722;
+	color:#FFF;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
 .navbar .center,.navbar .left,.navbar .right{
