@@ -2,6 +2,7 @@
 verde C0F722
 azul 197CB5
 azul super forte = 0000FF
+Azul Semi super forte = #1933B5
 verde Evernote - #008000
 verde Whats - #43d854
 verde criado - #19b523
@@ -16,7 +17,7 @@ h1,h2,h3,h4,h5,h6{
 
 .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block input[type=text], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block select, .list-block textarea{
 	color:#ccc;
-	color:#0000FF;
+	color:#1933B5;
 	color:#777;
 }
 
@@ -57,7 +58,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
-	background:#0000FF;
+	background:#1933B5;
 	color:#00FF00;
 	color:#FFF;
     box-shadow: inset 0px 0px 10px 0px #212E42;
@@ -67,7 +68,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .navbar, .subnavbar, .toolbar{
-	background:#0000FF;
+	background:#1933B5;
 	color:#00FF00;
 	color:#fff;
     box-shadow: inset 0px 0px 10px 0px #212E42;
@@ -79,23 +80,23 @@ h1,h2,h3,h4,h5,h6{
 
 .modal,.modal-inner,.modal-button{
 	color:#00FF00;
-	background:#0000FF;
+	background:#1933B5;
 }
 
 .actions-modal-button{
 	color:#00FF00;
-	background:#0000FF;
+	background:#1933B5;
 }
 
 .actions-modal-button:last-child{
 	color:#c5c5c5;
-	background:#0000FF;
+	background:#1933B5;
 }
 
 
 .list-block .item-link{
 	color:#00FF00 !important;
-	color:#0000FF !important;
+	color:#1933B5 !important;
 }
 
 .list-block ul:before,.list-block ul:after{
@@ -103,7 +104,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .list-block ul{
-	background:#0000FF;
+	background:#1933B5;
 	background:#3E577D;
 	background:rgba(255,255,255,0.25);
 	border-radius:5px;
@@ -124,16 +125,16 @@ h1,h2,h3,h4,h5,h6{
 	background:#e0e0e0 !important;
 	background:#222B38 !important;
 	background:#ddd !important;
-	color:#0000FF;
+	color:#1933B5;
 }
 
 .content-block-title{
 	color:#00FF00;
-	color:#0000FF;
+	color:#1933B5;
 }
 
 .panel{
-	background:#0000FF !important;
+	background:#1933B5 !important;
 	background:#DBDBDB !important;
 	border:0px !important;
     box-shadow: inset 0px 0px 10px 0px #212E42;
@@ -191,7 +192,7 @@ h1,h2,h3,h4,h5,h6{
 .loading{
 	text-align:center;
 	padding-top:20px;
-	color:#0000FF;
+	color:#1933B5;
 }
 
 .panel{
@@ -244,7 +245,7 @@ h1,h2,h3,h4,h5,h6{
 	position:absolute;
 	bottom:0px;
 	right:0px;
-	color:#0000FF;
+	color:#1933B5;
 	background:rgba(255,255,255,0.9);
 }
 
@@ -384,7 +385,7 @@ h1,h2,h3,h4,h5,h6{
 	font-size:1.1em;
 	font-weight:bold;
 	color:#00FF00;
-	color:#0000FF;
+	color:#1933B5;
 }
 .card-date{
 	font-size:0.9em;
@@ -395,7 +396,7 @@ h1,h2,h3,h4,h5,h6{
 	font-weight:bold;
 	color:#333;
 	color:#00FF00;
-	color:#0000FF;
+	color:#1933B5;
 }
 .card-like-number{
 	font-size:0.9em;
