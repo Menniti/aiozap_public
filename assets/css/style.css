@@ -31,7 +31,7 @@ h1,h2,h3,h4,h5,h6{
 	border-radius: 50%;
 	z-index: 1500;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	background-color: #1933B5;
+	background-color: #16b428;
 	color: #fff;
 	overflow: hidden;
 	-webkit-transition-duration: 300ms;
@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6{
 
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
 	background:#1933B5;
-	color:#1933B5;
+	color:#16b428;
 	color:#FFF;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
@@ -70,22 +70,22 @@ h1,h2,h3,h4,h5,h6{
 
 .navbar, .subnavbar, .toolbar{
 	background:#1933B5;
-	color:#1933B5;
+	color:#16b428;
 	color:#fff;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
 .navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
-	color:#1933B5;
+	color:#16b428;
 	color:#fff;
 }
 
 .modal,.modal-inner,.modal-button{
-	color:#1933B5;
+	color:#16b428;
 	background:#1933B5;
 }
 
 .actions-modal-button{
-	color:#1933B5;
+	color:#16b428;
 	background:#1933B5;
 }
 
@@ -96,7 +96,7 @@ h1,h2,h3,h4,h5,h6{
 
 
 .list-block .item-link{
-	color:#1933B5 !important;
+	color:#16b428 !important;
 	color:#1933B5 !important;
 }
 
@@ -130,7 +130,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .content-block-title{
-	color:#1933B5;
+	color:#16b428;
 	color:#1933B5;
 }
 
@@ -146,7 +146,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .button{
 	border:0px;
-	background:#1933B5;
+	background:#16b428;
 	color:#161E29;
 	box-shadow:inset 0px 0px 10px #92A3BD;
 }
@@ -239,7 +239,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .float-info{
-	border-top:3px solid #1933B5;
+	border-top:3px solid #16b428;
 	text-align:left;
 	width:90%;
 	padding:10px 5%;
@@ -385,7 +385,7 @@ h1,h2,h3,h4,h5,h6{
 	width:100%;
 	font-size:1.1em;
 	font-weight:bold;
-	color:#1933B5;
+	color:#16b428;
 	color:#1933B5;
 }
 .card-date{
@@ -396,7 +396,7 @@ h1,h2,h3,h4,h5,h6{
 	font-size:1.1em;
 	font-weight:bold;
 	color:#333;
-	color:#1933B5;
+	color:#16b428;
 	color:#1933B5;
 }
 .card-like-number{
@@ -446,7 +446,7 @@ p{
 }
 
 .lime{
-	color:#1933B5;
+	color:#16b428;
 }
 
 
