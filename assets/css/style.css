@@ -2,7 +2,7 @@
 verde C0F722
 azul 197CB5
 verde Evernote - #008000
-verde Whats - #43d854
+verde Whats - #008000
 verde criado - #19b523
 */
 
@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6{
 	border-radius: 50%;
 	z-index: 1500;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	background-color: #43d854;
+	background-color: #008000;
 	color: #fff;
 	overflow: hidden;
 	-webkit-transition-duration: 300ms;
@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6{
 
 .photo-browser .navbar, .photo-browser .toolbar, .views .view[data-page=photo-browser-slides] .navbar, .views .view[data-page=photo-browser-slides] .toolbar{
 	background:#197CB5;
-	color:#43d854;
+	color:#008000;
 	color:#FFF;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
@@ -66,22 +66,22 @@ h1,h2,h3,h4,h5,h6{
 
 .navbar, .subnavbar, .toolbar{
 	background:#197CB5;
-	color:#43d854;
+	color:#008000;
 	color:#fff;
     box-shadow: inset 0px 0px 10px 0px #212E42;
 }
 .navbar a.icon-only, .subnavbar a.icon-only, .toolbar a.icon-only{
-	color:#43d854;
+	color:#008000;
 	color:#fff;
 }
 
 .modal,.modal-inner,.modal-button{
-	color:#43d854;
+	color:#008000;
 	background:#197CB5;
 }
 
 .actions-modal-button{
-	color:#43d854;
+	color:#008000;
 	background:#197CB5;
 }
 
@@ -92,7 +92,7 @@ h1,h2,h3,h4,h5,h6{
 
 
 .list-block .item-link{
-	color:#43d854 !important;
+	color:#008000 !important;
 	color:#197CB5 !important;
 }
 
@@ -126,7 +126,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .content-block-title{
-	color:#43d854;
+	color:#008000;
 	color:#197CB5;
 }
 
@@ -142,7 +142,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .button{
 	border:0px;
-	background:#43d854;
+	background:#008000;
 	color:#161E29;
 	box-shadow:inset 0px 0px 10px #92A3BD;
 }
@@ -235,7 +235,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .float-info{
-	border-top:3px solid #43d854;
+	border-top:3px solid #008000;
 	text-align:left;
 	width:90%;
 	padding:10px 5%;
@@ -381,7 +381,7 @@ h1,h2,h3,h4,h5,h6{
 	width:100%;
 	font-size:1.1em;
 	font-weight:bold;
-	color:#43d854;
+	color:#008000;
 	color:#197CB5;
 }
 .card-date{
@@ -392,7 +392,7 @@ h1,h2,h3,h4,h5,h6{
 	font-size:1.1em;
 	font-weight:bold;
 	color:#333;
-	color:#43d854;
+	color:#008000;
 	color:#197CB5;
 }
 .card-like-number{
@@ -442,7 +442,7 @@ p{
 }
 
 .lime{
-	color:#43d854;
+	color:#008000;
 }
 
 
